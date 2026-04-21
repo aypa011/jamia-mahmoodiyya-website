@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="photogallery.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/annasr.jpg">
+    <title>Photo Gallery - Jamia Mahmoodiyya</title>
+    <!-- GSAP for Premium Animations -->
+
+
+</head>
+
+<body id="top">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <header class="main-head glass-header">
+        <section class="welcome-icons-head">
+            <div class="welcome-icons-div-head container">
+                <div class="welcome">
+                    <div class="welcome-text">
+                        <span data-i18n="welcome-msg">Welcome to Jamia Mahmoodiyya</span>
+                    </div>
+                </div>
+
+                <div class="lang-switcher-container" style="display: flex; align-items: center; gap: 15px;">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" style="background:transparent; border:none; color:white; cursor:pointer; font-size: 1.1rem; transition: transform 0.2s;"><i class="fa-solid fa-moon"></i></button>
+                    <div class="lang-btn" id="lang-btn">
+                        <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i
+                            class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="lang-dropdown glass-menu" id="lang-dropdown">
+                        <a href="#" class="lang-option" data-lang="en">English</a>
+                        <a href="#" class="lang-option" data-lang="ml">മലയാളം</a>
+                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <div class="icons-social-media">
+                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/+919578631301" target="_blank" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navi container">
+            <div class="nav-content">
+                <div class="nav-img">
+                    <a href="index.html">
+                        <img src="Images\annasr-bg.png" alt="Jamia Mahmoodiyya Logo">
+                    </a>
+                </div>
+
+                <div class="nav-link">
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
+                        <li><a href="index.html#our-institutions" data-i18n="nav-institutions">Institutions</a></li>
+                        <li><a href="index.html#About-us" data-i18n="nav-about">About Us</a></li>
+                        <li><a href="index.html#donate" data-i18n="nav-donate">Donate</a></li>
+                        <li class="media-hover"><a href="#" class="active" data-i18n="nav-media">Media <i
+                                     class="fa-solid fa-angle-down"></i></a>
+                            <div class="sub-menu-media glass-menu">
+                                <ul>
+                                    <li><a href="events.html">Events</a></li>
+                                    <li><a href="photogallery.html" class="active">Photo Gallery</a></li>
+                                    <li><a href="videogallery.html">Video Gallery</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Standardized Page Hero -->
+        <section class="sub-page-hero">
+            <div class="container reveal">
+                <h1>Photo Gallery</h1>
+                <div class="breadcrumb">
+                    <a href="index.html" data-i18n="nav-home">Home</a>
+                    <span>/</span>
+                    <span data-i18n="gallery-title">Gallery</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section section-padding" id="photo-gallery">
+            <div class="container">
+                <div class="section-header center">
+                    <h2>Our Memories</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Glimpses of life and learning at Jamia Mahmoodiyya.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All Photos</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="academic">Academic</button>
+                    <button class="filter-btn" data-filter="campus">Campus</button>
+                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                </div>
+
+                <!-- Gallery Grid — hardcoded for instant display -->
+                <div class="gallery-container" id="gallery">
+
+                    <div class="gallery-item" data-category="leadership" data-index="0">
+                        <img src="Images/darimi-ustad.png" alt="Nasrudheen Darimi Ustad" loading="lazy">
+                        <div class="gallery-caption">Nasrudheen Darimi Ustad</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="1">
+                        <img src="Images/MAHARJAN 24.jpg" alt="Maharjanul Mahabba 2024" loading="lazy">
+                        <div class="gallery-caption">Maharjanul Mahabba 2024</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="2">
+                        <img src="Images/maharjan a3.jpg" alt="Maharjanul Mahabba" loading="lazy">
+                        <div class="gallery-caption">Maharjanul Mahabba</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="3">
+                        <img src="Images/flag off final.jpg" alt="Flag Off Ceremony" loading="lazy">
+                        <div class="gallery-caption">Flag Off Ceremony</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="4">
+                        <img src="Images/rali3.jpg" alt="Meelad Rali" loading="lazy">
+                        <div class="gallery-caption">Meelad Rali</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="5">
+                        <img src="Images/rali2.jpg" alt="Rali Procession" loading="lazy">
+                        <div class="gallery-caption">Rali Procession</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="6">
+                        <img src="Images/rali 22.jpg" alt="Annual Rali 2022" loading="lazy">
+                        <div class="gallery-caption">Annual Rali 2022</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="7">
+                        <img src="Images/rali23.jpg" alt="Annual Rali 2023" loading="lazy">
+                        <div class="gallery-caption">Annual Rali 2023</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="8">
+                        <img src="Images/rali24.jpg" alt="Annual Rali 2024" loading="lazy">
+                        <div class="gallery-caption">Annual Rali 2024</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="9">
+                        <img src="Images/rali25.jpg" alt="Rali Procession 2025" loading="lazy">
+                        <div class="gallery-caption">Rali Procession 2025</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="10">
+                        <img src="Images/rali26.jpg" alt="Rali 2026" loading="lazy">
+                        <div class="gallery-caption">Rali 2026</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="11">
+                        <img src="Images/rali4.jpg" alt="Meelad Rally Gathering" loading="lazy">
+                        <div class="gallery-caption">Meelad Rally Gathering</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="12">
+                        <img src="Images/rali6.jpg" alt="Community Rally" loading="lazy">
+                        <div class="gallery-caption">Community Rally</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="13">
+                        <img src="Images/meelad rali and moulid copy5.jpg" alt="Meelad & Moulid" loading="lazy">
+                        <div class="gallery-caption">Meelad &amp; Moulid</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="14">
+                        <img src="Images/meelad rali and moulid-rali .jpg" alt="Moulid Celebration" loading="lazy">
+                        <div class="gallery-caption">Moulid Celebration</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="15">
+                        <img src="Images/moulid.jpg" alt="Moulid Program" loading="lazy">
+                        <div class="gallery-caption">Moulid Program</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="16">
+                        <img src="Images/mushara.jpg" alt="Mushara Program" loading="lazy">
+                        <div class="gallery-caption">Mushara Program</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events" data-index="17">
+                        <img src="Images/mushara 2.jpg" alt="Mushara Gathering" loading="lazy">
+                        <div class="gallery-caption">Mushara Gathering</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="18">
+                        <img src="Images/inagu main1.jpg" alt="Inauguration Ceremony" loading="lazy">
+                        <div class="gallery-caption">Inauguration Ceremony</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="19">
+                        <img src="Images/inagu main2.jpg" alt="Inauguration — Main Stage" loading="lazy">
+                        <div class="gallery-caption">Inauguration — Main Stage</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="20">
+                        <img src="Images/inagu main3.jpg" alt="Inauguration Highlights" loading="lazy">
+                        <div class="gallery-caption">Inauguration Highlights</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="campus" data-index="21">
+                        <img src="Images/jm bg.jpg" alt="Jamia Mahmoodiyya" loading="lazy">
+                        <div class="gallery-caption">Jamia Mahmoodiyya</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="22">
+                        <img src="Images/ppt 1.jpg" alt="Educational Session" loading="lazy">
+                        <div class="gallery-caption">Educational Session</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="23">
+                        <img src="Images/ppt 2.jpg" alt="Seminar Presentation" loading="lazy">
+                        <div class="gallery-caption">Seminar Presentation</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="24">
+                        <img src="Images/ppt gen copy1.jpg" alt="General Assembly" loading="lazy">
+                        <div class="gallery-caption">General Assembly</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="25">
+                        <img src="Images/ppt gen copy2.jpg" alt="Student Gathering" loading="lazy">
+                        <div class="gallery-caption">Student Gathering</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="26">
+                        <img src="Images/ppt gen copy3.jpg" alt="Faculty Seminar" loading="lazy">
+                        <div class="gallery-caption">Faculty Seminar</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="27">
+                        <img src="Images/ppt gen copy5.jpg" alt="Annual Ceremony" loading="lazy">
+                        <div class="gallery-caption">Annual Ceremony</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="campus" data-index="28">
+                        <img src="Images/mahmoodiyya new building.jpg" alt="New Building" loading="lazy">
+                        <div class="gallery-caption">New Building</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="academic" data-index="29">
+                        <img src="Images/THADREES 1 2.jpg" alt="Thadrees Session" loading="lazy">
+                        <div class="gallery-caption">Thadrees Session</div>
+                    </div>
+
+                    <div class="gallery-item" data-category="campus" data-index="30">
+                        <img src="Images/MAHMOODIYYA.jpg" alt="Jamia Mahmoodiyya" loading="lazy">
+                        <div class="gallery-caption">Jamia Mahmoodiyya</div>
+                    </div>
+
+                </div><!-- /.gallery-container -->
+
+                <!-- Gallery Navigation Actions -->
+                <div class="gallery-actions" style="margin-top: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <a href="index.html" class="btn btn-outline" style="min-width: 200px;">
+                        <i class="fa-solid fa-house"></i> <span data-i18n="nav-back-home">Back to Home</span>
+                    </a>
+                    <a href="videogallery.html" class="btn btn-primary" style="min-width: 200px;">
+                        <i class="fa-solid fa-play"></i> <span data-i18n="nav-video-gallery">Video Gallery</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal -->
+    <div id="photoModal" class="modal" style="display:none; position:fixed; inset:0; z-index:10000; background:rgba(2,6,23,0.97); backdrop-filter:blur(14px);">
+        <div class="modal-topbar">
+            <button onclick="closeModal()" class="modal-back-btn" aria-label="Back to gallery">
+                <i class="fa-solid fa-arrow-left"></i> Back to Gallery
+            </button>
+            <div id="modalCounter" class="modal-counter"></div>
+        </div>
+
+        <!-- Image + Caption — centred -->
+        <div class="modal-content">
+            <button class="nav-btn prev-btn" onclick="showPrev()" aria-label="Previous Image">&#10094;</button>
+            <img id="modalImg" class="full-modal-img" src="" alt="Full View">
+            <div class="modal-caption" id="modalCaption"></div>
+            <button class="nav-btn next-btn" onclick="showNext()" aria-label="Next Image">&#10095;</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footerContainer container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo" class="footer-logo">
+                    <p>Fostering Excellence in Education & Spirituality.</p>
+                    <div class="socialIcons">
+                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footerNav">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="index.html#About-us">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="photogallery.html" class="active">Gallery</a></li>
+                        <li><a href="index.html#donate">Donate</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Perinjanam, Thrissur, Kerala</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 95 786 313 01</p>
+                    <p><i class="fa-solid fa-envelope"></i> mahamoodiya@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy; <span id="current-year">2026</span> Jamia Mahmoodiyya | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/+919578631301" target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>    <!-- Scroll to Top Button -->
+    <a href="#top" class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="photogallery.js" defer></script>
+</body>
+
+</html>

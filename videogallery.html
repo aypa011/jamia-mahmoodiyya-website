@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="videogallery.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/annasr.jpg">
+    <title>Video Gallery - Jamia Mahmoodiyya</title>
+    <!-- GSAP for Premium Animations -->
+
+
+</head>
+
+<body id="top">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <header class="main-head glass-header">
+        <section class="welcome-icons-head">
+            <div class="welcome-icons-div-head container">
+                <div class="welcome">
+                    <div class="welcome-text">
+                        <span data-i18n="welcome-msg">Welcome to Jamia Mahmoodiyya</span>
+                    </div>
+                </div>
+
+                <div class="lang-switcher-container" style="display: flex; align-items: center; gap: 15px;">
+                    <button id="theme-toggle" aria-label="Toggle Dark Mode" style="background:transparent; border:none; color:white; cursor:pointer; font-size: 1.1rem; transition: transform 0.2s;"><i class="fa-solid fa-moon"></i></button>
+                    <div class="lang-btn" id="lang-btn">
+                        <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i
+                            class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="lang-dropdown glass-menu" id="lang-dropdown">
+                        <a href="#" class="lang-option" data-lang="en">English</a>
+                        <a href="#" class="lang-option" data-lang="ml">മലയാളം</a>
+                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <div class="icons-social-media">
+                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/+919578631301" target="_blank" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navi container">
+            <div class="nav-content">
+                <div class="nav-img">
+                    <a href="index.html">
+                        <img src="Images\annasr-bg.png" alt="Jamia Mahmoodiyya Logo">
+                    </a>
+                </div>
+
+                <div class="nav-link">
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
+                        <li><a href="index.html#our-institutions" data-i18n="nav-institutions">Institutions</a></li>
+                        <li><a href="index.html#About-us" data-i18n="nav-about">About Us</a></li>
+                        <li><a href="index.html#donate" data-i18n="nav-donate">Donate</a></li>
+                        <li class="media-hover"><a href="#" class="active" data-i18n="nav-media">Media <i
+                                     class="fa-solid fa-angle-down"></i></a>
+                            <div class="sub-menu-media glass-menu">
+                                <ul>
+                                    <li><a href="events.html">Events</a></li>
+                                    <li><a href="photogallery.html">Photo Gallery</a></li>
+                                    <li><a href="videogallery.html" class="active">Video Gallery</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Standardized Page Hero -->
+        <section class="sub-page-hero">
+            <div class="container reveal">
+                <h1>Video Gallery</h1>
+                <div class="breadcrumb">
+                    <a href="index.html" data-i18n="nav-home">Home</a>
+                    <span>/</span>
+                    <span data-i18n="video-gallery-title">Videos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Video Gallery Section ─────────────────────────────────────── -->
+        <section class="gallery-section section-padding">
+            <div class="container reveal">
+                <div class="section-header center">
+                    <h2>Featured Videos</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Watch our latest events, speeches, and programs from Mahmoodiyya Media.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="vg-filters">
+                    <button class="vg-filter-btn active" data-filter="all">All</button>
+                    <button class="vg-filter-btn" data-filter="events">Events</button>
+                    <button class="vg-filter-btn" data-filter="speeches">Speeches</button>
+                    <button class="vg-filter-btn" data-filter="programs">Programs</button>
+                </div>
+
+                <!-- Video Grid -->
+                <div class="vg-grid" id="videoGrid">
+
+                    <div class="vg-card" data-category="events" onclick="openVideoModal('_XV_PHkYb3s','Annual Day Celebration 2025')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/_XV_PHkYb3s/hqdefault.jpg" alt="Annual Day 2025" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Events</span>
+                            <h3>Annual Day Celebration 2025</h3>
+                            <p>Highlights from our grand Annual Day featuring student performances and speeches.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="speeches" onclick="openVideoModal('djot0UQrjXU','Islamic Seminar')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/djot0UQrjXU/hqdefault.jpg" alt="Islamic Seminar" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Speeches</span>
+                            <h3>Islamic Seminar</h3>
+                            <p>Keynote address by Usthad Nasrudheen Darimi on modern Islamic education.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="programs" onclick="openVideoModal('RBrwe3vszqw','Campus Tour')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/RBrwe3vszqw/hqdefault.jpg" alt="Campus Tour" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Programs</span>
+                            <h3>Campus Tour</h3>
+                            <p>Take a virtual tour of the Jamia Mahmoodiyya campus and our various institutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="events" onclick="openVideoModal('nkl3O2SLHEA','Maharjanul Mahabba')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/nkl3O2SLHEA/hqdefault.jpg" alt="Maharjanul Mahabba" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Events</span>
+                            <h3>Maharjanul Mahabba</h3>
+                            <p>The grand annual gathering celebrating knowledge and love for the Prophet ﷺ.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="speeches" onclick="openVideoModal('4Y2xyAHKJaQ','Friday Bayan')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/4Y2xyAHKJaQ/hqdefault.jpg" alt="Friday Bayan" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Speeches</span>
+                            <h3>Friday Bayan</h3>
+                            <p>Weekly Islamic discourse by Usthad Nasrudheen Darimi — lessons for daily life.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="events" onclick="openVideoModal('IaKcSMijN0U','Meelad Rali Procession')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/IaKcSMijN0U/hqdefault.jpg" alt="Meelad Rali" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Events</span>
+                            <h3>Meelad Rali Procession</h3>
+                            <p>Community procession celebrating the birth of the Prophet Muhammad ﷺ.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="programs" onclick="openVideoModal('Jfj5HkFfvRc','Hifz Graduation Ceremony')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/Jfj5HkFfvRc/hqdefault.jpg" alt="Hifz Graduation" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Programs</span>
+                            <h3>Hifz Graduation Ceremony</h3>
+                            <p>Celebrating students who completed the memorisation of the Holy Qur'an.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="speeches" onclick="openVideoModal('l0NHJMoqFwI','Special Lecture Series')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/l0NHJMoqFwI/hqdefault.jpg" alt="Special Lecture" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Speeches</span>
+                            <h3>Special Lecture Series</h3>
+                            <p>In-depth lecture on Islamic jurisprudence and contemporary issues.</p>
+                        </div>
+                    </div>
+
+                    <div class="vg-card" data-category="programs" onclick="openVideoModal('5Rv5xzPBK9U','Prize Distribution 2024')">
+                        <div class="vg-thumb">
+                            <img src="https://img.youtube.com/vi/5Rv5xzPBK9U/hqdefault.jpg" alt="Prize Distribution" loading="lazy">
+                            <div class="vg-play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="vg-info">
+                            <span class="vg-tag">Programs</span>
+                            <h3>Prize Distribution 2024</h3>
+                            <p>Annual prize distribution honouring top achievers across all institutions.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Gallery Navigation Actions -->
+                <div class="gallery-actions" style="margin-top: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <a href="index.html" class="btn btn-outline" style="min-width: 200px;">
+                        <i class="fa-solid fa-arrow-left"></i> <span data-i18n="nav-back-home">Back to Home</span>
+                    </a>
+                    <a href="photogallery.html" class="btn btn-primary" style="min-width: 200px;">
+                        <i class="fa-solid fa-images"></i> <span data-i18n="nav-photo-gallery">Photo Gallery</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Video Lightbox Modal ───────────────────────────────────────── -->
+        <div id="videoModal" class="v-modal">
+            <div class="v-modal-topbar">
+                <button onclick="closeVideoModal()" class="v-modal-back" aria-label="Back to gallery">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Videos
+                </button>
+                <div id="videoModalTitle" class="v-modal-title"></div>
+                <div style="width: 140px;"></div> <!-- Spacer for balance -->
+            </div>
+            
+            <div class="v-modal-content">
+                <div class="v-modal-frame-container">
+                    <iframe id="videoModalFrame" src="" 
+                        allow="autoplay; fullscreen; picture-in-picture; encrypted-media" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+    </main>
+<footer class="site-footer">
+        <div class="footerContainer container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo" class="footer-logo">
+                    <p>Fostering Excellence in Education & Spirituality.</p>
+                    <div class="socialIcons">
+                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footerNav">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="index.html#About-us">About Us</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="photogallery.html">Gallery</a></li>
+                        <li><a href="index.html#donate">Donate</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Perinjanam, Thrissur, Kerala</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 95 786 313 01</p>
+                    <p><i class="fa-solid fa-envelope"></i> mahamoodiya@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy; <span id="current-year">2026</span> Jamia Mahmoodiyya | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/+919578631301" target="_blank" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>    <!-- Scroll to Top Button -->
+    <a href="#top" class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
+
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="videogallery.js" defer></script>
+
+</body>
+
+
+</html>
