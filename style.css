@@ -2510,6 +2510,7 @@ body.dark-theme .leader-img {
     }
 }
 
+
 .mobile-only-pay {
     display: none;
 }
@@ -2517,5 +2518,219 @@ body.dark-theme .leader-img {
 @media (max-width: 768px) {
     .mobile-only-pay {
         display: inline-flex;
+    }
+}
+
+/* ==========================================================================
+   Search Overlay
+   ========================================================================== */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+}
+
+#global-search {
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    box-shadow: var(--shadow-lg);
+}
+
+#search-results {
+    margin-top: 30px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(16, 185, 129, 0.1);
+    transform: translateX(10px);
+}
+
+.search-result-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.search-result-item h4 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.search-result-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.close-search {
+    position: absolute;
+    top: -60px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Campus Map & Virtual Tour
+   ========================================================================== */
+.map-interactive-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 0;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.map-hotspots-container {
+    position: relative;
+    height: 500px;
+}
+
+.map-base-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotspot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--primary-color);
+    animation: pulse-ring 2s infinite;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.hotspot:hover {
+    transform: scale(1.2);
+    background: var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-color);
+}
+
+.map-info-panel {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.map-info-panel h3 {
+    color: var(--primary-light);
+    margin-bottom: 15px;
+}
+
+.tour-wrapper {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0 !important;
+}
+
+.tour-placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.tour-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tour-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.tour-wrapper:hover .tour-overlay {
+    background: rgba(0,0,0,0.2);
+}
+
+.play-btn-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease;
+}
+
+.tour-wrapper:hover .play-btn-circle {
+    transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+    .map-interactive-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .map-info-panel {
+        padding: 30px;
     }
 }

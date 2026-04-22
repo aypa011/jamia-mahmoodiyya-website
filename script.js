@@ -229,43 +229,120 @@ document.addEventListener('DOMContentLoaded', () => {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    // 9. Prayer Times Fetcher (Aladhan API)
-    const fetchPrayerTimes = async () => {
-        const prayerContainer = document.getElementById('prayer-times-grid');
-        if (!prayerContainer) return;
+    // 10. Live Updates from JSON
+    const updateNotices = async () => {
+        const marqueeTrack = document.querySelector('.marquee-track');
+        if (!marqueeTrack) return;
 
         try {
-            // Perinjanam, Thrissur (680686) roughly Lat: 10.31, Lon: 76.16
-            // Using method 2 (ISNA) or 1 (UMKR) - standard for the region
-            const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Thrissur&country=India&method=1');
+            const response = await fetch('data.json');
             const data = await response.json();
             
-            if (data.code === 200) {
-                const timings = data.data.timings;
-                const relevantPrayers = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
-                
+            if (data.notices && data.notices.length > 0) {
                 let html = '';
-                relevantPrayers.forEach(p => {
+                data.notices.forEach(notice => {
                     html += `
-                        <div class="prayer-card glass-card">
-                            <span class="prayer-name" data-i18n="prayer-${p.toLowerCase()}">${p}</span>
-                            <span class="prayer-time">${timings[p]}</span>
-                        </div>
+                        <span class="notice-item">
+                            ${notice.isNew ? '<span class="badge new-badge">NEW</span>' : ''}
+                            ${notice.text}
+                        </span>
                     `;
                 });
-                prayerContainer.innerHTML = html;
-                
-                // Trigger translation update for new elements
-                if (typeof window.setLanguage === 'function') {
-                    window.setLanguage(localStorage.getItem('preferredLang') || 'en');
-                }
+                // Duplicate for smooth marquee effect if needed, but the current track handles it
+                marqueeTrack.innerHTML = html;
             }
         } catch (error) {
-            console.error('Error fetching prayer times:', error);
-            prayerContainer.innerHTML = '<p class="error-msg">Connection issue. Please refresh.</p>';
+            console.error('Error fetching notices:', error);
         }
     };
 
-    fetchPrayerTimes();
+    updateNotices();
 
-});
+    // 11. Search Functionality
+    const searchBtn = document.createElement('div');
+    searchBtn.className = 'search-trigger';
+    searchBtn.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+    searchBtn.style.cssText = 'color:white; cursor:pointer; font-size: 1.1rem; margin-right: 15px;';
+    
+    const langContainer = document.querySelector('.lang-switcher-container');
+    if (langContainer) {
+        langContainer.prepend(searchBtn);
+    }
+
+    const searchOverlay = document.createElement('div');
+    searchOverlay.className = 'search-overlay glass-menu';
+    searchOverlay.innerHTML = `
+        <div class="search-container container">
+            <input type="text" id="global-search" placeholder="Search institutions, events, or pages..." autocomplete="off">
+            <div id="search-results"></div>
+            <button class="close-search"><i class="fa-solid fa-times"></i></button>
+        </div>
+    `;
+    document.body.appendChild(searchOverlay);
+
+    searchBtn.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        document.getElementById('global-search').focus();
+    });
+
+    searchOverlay.querySelector('.close-search').addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+    });
+
+    const searchInput = document.getElementById('global-search');
+    const resultsContainer = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', async (e) => {
+        const query = e.target.value.toLowerCase();
+        if (query.length < 2) {
+            resultsContainer.innerHTML = '';
+            return;
+        }
+
+        try {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            
+            const results = data.institutions.filter(inst => 
+                inst.name.toLowerCase().includes(query) || 
+                inst.description.toLowerCase().includes(query)
+            );
+
+            if (results.length > 0) {
+                resultsContainer.innerHTML = results.map(inst => `
+                    <a href="institutions.html?id=${inst.id}" class="search-result-item">
+                        <img src="${inst.image}" alt="${inst.name}">
+                        <div>
+                            <h4>${inst.name}</h4>
+                            <p>${inst.description.substring(0, 60)}...</p>
+                        </div>
+                    </a>
+                `).join('');
+            } else {
+                resultsContainer.innerHTML = '<p class="no-results">No matches found.</p>';
+            }
+        } catch (err) {
+            console.error('Search error:', err);
+        }
+    });
+
+    // 12. Interactive Map Hotspots
+    const hotspots = document.querySelectorAll('.hotspot');
+    const infoContent = document.getElementById('map-info-content');
+
+    hotspots.forEach(spot => {
+        spot.addEventListener('mouseenter', () => {
+            const title = spot.getAttribute('data-title');
+            const desc = spot.getAttribute('data-desc');
+            
+            if (infoContent) {
+                infoContent.innerHTML = `
+                    <h3>${title}</h3>
+                    <p>${desc}</p>
+                `;
+                infoContent.classList.add('reveal');
+            }
+        });
+    });
+
+});

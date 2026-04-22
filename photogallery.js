@@ -1,10 +1,49 @@
 /**
  * Jamia Mahmoodiyya - Photo Gallery
- * Images are hardcoded in HTML for instant display.
- * JS handles: filter tabs, modal lightbox, keyboard nav.
+ * Dynamic Category Loading & Filtering
  */
 
-// ── Image metadata (for modal captions / counter) ──────────────────────────
+const renderGallery = async () => {
+    const filterContainer = document.querySelector('.gallery-filters');
+    if (!filterContainer) return;
+
+    try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        
+        if (data.gallery_categories) {
+            filterContainer.innerHTML = data.gallery_categories.map(cat => `
+                <button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-filter="${cat.toLowerCase()}">${cat}</button>
+            `).join('');
+
+            // Re-attach filter listeners
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+
+                    const filter = btn.getAttribute("data-filter");
+                    const items = document.querySelectorAll(".gallery-item");
+                    
+                    items.forEach(item => {
+                        const cat = item.getAttribute("data-category").toLowerCase();
+                        if (filter === 'all' || cat === filter) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                    
+                    updateVisibleIndices();
+                });
+            });
+        }
+    } catch (err) {
+        console.error('Error loading gallery categories:', err);
+    }
+};
+
+// ── Image metadata (Synchronized with hardcoded HTML for now) ────────────────
 const images = [
     { src: "Images/darimi-ustad.png",                  caption: "Nasrudheen Darimi Ustad",       category: "leadership" },
     { src: "Images/MAHARJAN 24.jpg",                   caption: "Maharjanul Mahabba 2024",       category: "events" },
@@ -39,27 +78,18 @@ const images = [
     { src: "Images/MAHMOODIYYA.jpg",                   caption: "Jamia Mahmoodiyya",             category: "campus" },
 ];
 
-// ── State ───────────────────────────────────────────────────────────────────
 let currentIndex   = 0;
-let visibleIndices = images.map((_, i) => i); // all visible by default
+let visibleIndices = images.map((_, i) => i);
 const modal        = document.getElementById("photoModal");
 
-// ── Filter Tabs ─────────────────────────────────────────────────────────────
-document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const cat = btn.getAttribute("data-filter");
-        visibleIndices = [];
-
-        document.querySelectorAll(".gallery-item").forEach(item => {
-            const match = cat === "all" || item.getAttribute("data-category") === cat;
-            item.style.display = match ? "" : "none";
-            if (match) visibleIndices.push(parseInt(item.getAttribute("data-index")));
-        });
+function updateVisibleIndices() {
+    visibleIndices = [];
+    document.querySelectorAll(".gallery-item").forEach(item => {
+        if (item.style.display !== "none") {
+            visibleIndices.push(parseInt(item.getAttribute("data-index")));
+        }
     });
-});
+}
 
 // ── Gallery Item Click → Open Modal ─────────────────────────────────────────
 document.querySelectorAll(".gallery-item").forEach(item => {
@@ -78,16 +108,13 @@ function openModal() {
     const modalImg = document.getElementById("modalImg");
     const modalCaption = document.getElementById("modalCaption");
     
-    // Update content
     modalImg.src = img.src;
     modalCaption.textContent = img.caption;
     if (counter) counter.textContent = `${currentIndex + 1} / ${visibleIndices.length}`;
     
-    // Show modal with animation
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
 
-    // History state integration
     if (!history.state || !history.state.modalOpen) {
         history.pushState({ modalOpen: true }, "");
     }
@@ -96,14 +123,11 @@ function openModal() {
 function closeModal(fromHistory = false) {
     modal.style.display = "none";
     document.body.style.overflow = "";
-
-    // If closing via UI/X button, remove the history state
     if (!fromHistory && history.state && history.state.modalOpen) {
         history.back();
     }
 }
 
-// Handle browser back button
 window.onpopstate = function(event) {
     if (modal.style.display === "block") {
         closeModal(true);
@@ -112,15 +136,15 @@ window.onpopstate = function(event) {
 
 function showNext() {
     currentIndex = (currentIndex + 1) % visibleIndices.length;
-    animateTransition();
+    updateModalContent();
 }
 
 function showPrev() {
     currentIndex = (currentIndex - 1 + visibleIndices.length) % visibleIndices.length;
-    animateTransition();
+    updateModalContent();
 }
 
-function animateTransition() {
+function updateModalContent() {
     const img = images[visibleIndices[currentIndex]];
     const modalImg = document.getElementById("modalImg");
     const modalCaption = document.getElementById("modalCaption");
@@ -131,7 +155,6 @@ function animateTransition() {
     if (counter) counter.textContent = `${currentIndex + 1} / ${visibleIndices.length}`;
 }
 
-// ── Keyboard Navigation ──────────────────────────────────────────────────────
 document.addEventListener("keydown", e => {
     if (modal.style.display !== "block") return;
     if (e.key === "Escape")     closeModal();
@@ -139,7 +162,8 @@ document.addEventListener("keydown", e => {
     if (e.key === "ArrowLeft")  showPrev();
 });
 
-// Click backdrop to close
 modal.addEventListener("click", e => {
     if (e.target === modal) closeModal();
 });
+
+renderGallery();
