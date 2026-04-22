@@ -228,43 +228,6 @@
             "studentCount": 250
         }
     ],
-    "faculty": [
-        {
-            "name": "Nasrudheen Darimi Ustad",
-            "role": "Founder & Chairman",
-            "image": "Images/darimi-ustad.png",
-            "bio": "A visionary leader dedicated to the spiritual and academic growth of the community."
-        },
-        {
-            "name": "Haseen Nurani Ustad",
-            "role": "General Secretary",
-            "image": "Images/nurani-ustad.jpeg",
-            "bio": "Overseeing the institutional development and ensuring excellence in education."
-        }
-    ],
-    "events_calendar": [
-        {
-            "title": "Annual Islamic Conference",
-            "date": "2026-05-15",
-            "time": "9:00 AM",
-            "location": "Main Auditorium",
-            "type": "Conference"
-        },
-        {
-            "title": "CBSE Parent-Teacher Meet",
-            "date": "2026-04-25",
-            "time": "10:00 AM",
-            "location": "School Hall",
-            "type": "Meeting"
-        },
-        {
-            "title": "Hifz Graduation Ceremony",
-            "date": "2026-06-10",
-            "time": "5:00 PM",
-            "location": "Zawiyathul Quran Campus",
-            "type": "Ceremony"
-        }
-    ],
     "gallery_categories": [
         "All",
         "Campus",

@@ -214,85 +214,82 @@ document.addEventListener('DOMContentLoaded', () => {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    // 10. Load Dynamic Data from data.json (Notices, Faculty, Events)
+    // 10. Load Dynamic Data (Notices, Faculty, Events)
     const loadDynamicData = async () => {
         const marqueeTrack = document.querySelector('.marquee-track');
         const facultyList = document.getElementById('faculty-list');
         const calendarTrack = document.getElementById('calendar-track');
 
-        try {
-            const response = await fetch('data.json');
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const data = await response.json();
+        // 10.1 Load Notices (from data.json)
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                if (marqueeTrack && data.notices) {
+                    marqueeTrack.innerHTML = data.notices.map(notice => `
+                        <span class="notice-item">
+                            ${notice.isNew ? '<span class="badge new-badge">NEW</span>' : ''}
+                            ${notice.text}
+                        </span>
+                    `).join('');
+                }
+            }).catch(e => console.warn('Notices load failed:', e));
 
-            // Render Notices (Marquee)
-            if (marqueeTrack && data.notices) {
-                marqueeTrack.innerHTML = data.notices.map(notice => `
-                    <span class="notice-item">
-                        ${notice.isNew ? '<span class="badge new-badge">NEW</span>' : ''}
-                        ${notice.text}
-                    </span>
-                `).join('');
-            }
-
-            // Render Faculty (Leadership)
-            if (facultyList && data.faculty) {
-                facultyList.innerHTML = data.faculty.map(member => `
-                    <div class="leader-card glass-card reveal">
-                        <div class="leader-img-wrapper">
-                            <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
-                        </div>
-                        <span class="leader-label">${member.role}</span>
-                        <h3 class="leader-name">${member.name}</h3>
-                        <p class="leader-bio">${member.bio}</p>
-                    </div>
-                `).join('');
-                
-                // Re-init reveal observer for new elements
-                facultyList.querySelectorAll('.reveal').forEach(el => {
-                    revealObserver.observe(el);
-                    // Force active if in viewport
-                    if (el.getBoundingClientRect().top < window.innerHeight) {
-                        el.classList.add('active');
-                    }
-                });
-            }
-
-            // Render Event Calendar
-            if (calendarTrack && data.events_calendar) {
-                calendarTrack.innerHTML = data.events_calendar.map(event => {
-                    const dateObj = new Date(event.date);
-                    const day = dateObj.getDate();
-                    const month = dateObj.toLocaleString('default', { month: 'short' });
-                    return `
-                        <div class="calendar-card reveal">
-                            <div class="cal-date">
-                                <span class="cal-day">${day}</span>
-                                <span class="cal-month">${month}</span>
+        // 10.2 Load Faculty (from faculty.json)
+        fetch('faculty.json')
+            .then(res => res.json())
+            .then(facultyData => {
+                if (facultyList && facultyData) {
+                    facultyList.innerHTML = facultyData.map(member => `
+                        <div class="leader-card glass-card reveal">
+                            <div class="leader-img-wrapper">
+                                <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
                             </div>
-                            <div class="cal-info">
-                                <h3>${event.title}</h3>
-                                <div class="cal-meta">
-                                    <span><i class="fa-regular fa-clock"></i> ${event.time}</span>
-                                    <span><i class="fa-solid fa-location-dot"></i> ${event.location}</span>
+                            <span class="leader-label">${member.role}</span>
+                            <h3 class="leader-name">${member.name}</h3>
+                            <p class="leader-bio">${member.bio}</p>
+                        </div>
+                    `).join('');
+                    
+                    facultyList.querySelectorAll('.reveal').forEach(el => {
+                        revealObserver.observe(el);
+                        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
+                    });
+                }
+            }).catch(e => console.warn('Faculty load failed:', e));
+
+        // 10.3 Load Event Calendar (from events.json)
+        fetch('events.json')
+            .then(res => res.json())
+            .then(eventData => {
+                if (calendarTrack && eventData) {
+                    calendarTrack.innerHTML = eventData.map(event => {
+                        const dateObj = new Date(event.date);
+                        const day = dateObj.getDate();
+                        const month = dateObj.toLocaleString('default', { month: 'short' });
+                        return `
+                            <div class="calendar-card reveal">
+                                <div class="cal-date">
+                                    <span class="cal-day">${day}</span>
+                                    <span class="cal-month">${month}</span>
                                 </div>
-                                <span class="cal-type">${event.type}</span>
+                                <div class="cal-info">
+                                    <h3>${event.title}</h3>
+                                    <div class="cal-meta">
+                                        <span><i class="fa-regular fa-clock"></i> ${event.time}</span>
+                                        <span><i class="fa-solid fa-location-dot"></i> ${event.location}</span>
+                                    </div>
+                                    <span class="cal-type">${event.type}</span>
+                                </div>
                             </div>
-                        </div>
-                    `;
-                }).join('');
-                
-                calendarTrack.querySelectorAll('.reveal').forEach(el => {
-                    revealObserver.observe(el);
-                    if (el.getBoundingClientRect().top < window.innerHeight) {
-                        el.classList.add('active');
-                    }
-                });
-            }
-
-        } catch (error) {
-            console.error('Error loading dynamic data:', error);
-        }
+                        `;
+                    }).join('');
+                    
+                    calendarTrack.querySelectorAll('.reveal').forEach(el => {
+                        revealObserver.observe(el);
+                        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
+                    });
+                }
+            }).catch(e => console.warn('Events load failed:', e));
     };
 
     loadDynamicData();
