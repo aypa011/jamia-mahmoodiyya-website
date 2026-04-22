@@ -356,46 +356,8 @@
                         spirituality.</p>
                 </div>
 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">1986</span>
-                            <h3 data-i18n="milestone-1-title">Foundation</h3>
-                            <p data-i18n="milestone-1-desc">Jamia Mahmoodiyya was founded by Usthad Nasrudheen
-                                Darimi with a vision for holistic Islamic education.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">1995</span>
-                            <h3 data-i18n="milestone-2-title">Expansion</h3>
-                            <p data-i18n="milestone-2-desc">Opening of the first dedicated hifz college campus to
-                                accommodate growing numbers of students.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">2010</span>
-                            <h3 data-i18n="milestone-3-title">English School</h3>
-                            <p data-i18n="milestone-3-desc">Establishment of Mahmoodiyya English School (CBSE) to
-                                integrate secular and spiritual excellence.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">2024</span>
-                            <h3 data-i18n="milestone-4-title">Modernization</h3>
-                            <p data-i18n="milestone-4-desc">Launch of Edu Village and Smart Seed Premium Preschool,
-                                redefining modern Islamic learning environments.</p>
-                        </div>
-                    </div>
+                <div class="timeline" id="journey-timeline">
+                    <!-- Milestones will be loaded dynamically from journey.json -->
                 </div>
             </div>
         </section>
@@ -538,12 +500,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="loc map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.376648256478!2d76.15800137451193!3d10.311711467594579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081e195bdaab51%3A0x6294e8a838404e2e!2s8566%2BM6W%2C%201%2C%20Chakkarapadam%20Rd%2C%20Perinjanam%2C%20Kerala%20680686!5e0!3m2!1sen!2sin!4v1732860904368!5m2!1sen!2sin"
-                            title="Jamia Mahmoodiyya Location Map" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                <div class="map-full-wrapper reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.376648256478!2d76.15800137451193!3d10.311711467594579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081e195bdaab51%3A0x6294e8a838404e2e!2s8566%2BM6W%2C%201%2C%20Chakkarapadam%20Rd%2C%20Perinjanam%2C%20Kerala%20680686!5e0!3m2!1sen!2sin!4v1732860904368!5m2!1sen!2sin"
+                        title="Jamia Mahmoodiyya Location Map" style="border:0; width: 100%; height: 450px; border-radius: 20px;" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -623,6 +584,18 @@
 
 
 
+
+    <!-- Quick Action Menu -->
+    <div class="quick-action-menu" id="quick-action-menu">
+        <div class="action-items">
+            <a href="tel:+919578631301" class="action-item" title="Call Us"><i class="fa-solid fa-phone"></i></a>
+            <a href="index.html#donate" class="action-item" title="Donate"><i class="fa-solid fa-heart"></i></a>
+            <a href="admissions.html" class="action-item" title="Admissions"><i class="fa-solid fa-user-plus"></i></a>
+        </div>
+        <button class="fab-main" id="fab-main" aria-label="Quick Actions">
+            <i class="fa-solid fa-bolt"></i>
+        </button>
+    </div>
 
     <!-- Custom Translations Script -->
     <script src="translations.js" defer></script>
