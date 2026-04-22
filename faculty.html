@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Faculty | Jamia Mahmoodiyya</title>
+    <meta name="description" content="Meet the esteemed faculty and academic team of Jamia Mahmoodiyya. Our scholars and educators are dedicated to excellence.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page">
+    <!-- Navigation (Same as index) -->
+    <header class="main-head">
+        <div class="container">
+            <nav class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="Images/logo.png" alt="Jamia Mahmoodiyya Logo" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-main">Jamia Mahmoodiyya</span>
+                            <span class="logo-sub">Educational & Charitable Trust</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-links-wrapper">
+                    <ul class="nav-link">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="institutions.html">Institutions</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li class="media-hover">
+                            <a href="#">Media <i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="photogallery.html">Photo Gallery</a></li>
+                                <li><a href="videogallery.html">Video Gallery</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="index.html#donate" class="btn btn-primary btn-sm">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Standardized Page Hero -->
+        <section class="sub-page-hero">
+            <div class="container reveal">
+                <h1>Our Faculty</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Faculty</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header center">
+                    <h2>Institutional Leadership</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="leadership-grid" id="faculty-page-leadership">
+                    <!-- Loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Team Section -->
+        <section class="section-padding bg-surface">
+            <div class="container">
+                <div class="section-header center">
+                    <h2>Academic & Teaching Staff</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Our highly qualified faculty members across all departments.</p>
+                </div>
+                
+                <div class="teacher-grid" id="faculty-page-teachers">
+                    <!-- Loaded via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Jamia Mahmoodiyya. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Special logic for this page to load all faculty
+        document.addEventListener('DOMContentLoaded', () => {
+            const leadList = document.getElementById('faculty-page-leadership');
+            const teachList = document.getElementById('faculty-page-teachers');
+
+            fetch('faculty.json')
+                .then(res => res.json())
+                .then(data => {
+                    if (leadList && data.leadership) {
+                        leadList.innerHTML = data.leadership.map(member => `
+                            <div class="leader-card glass-card reveal active">
+                                <div class="leader-img-wrapper">
+                                    <img src="${member.image}" alt="${member.name}" class="leader-img" onerror="this.src='Images/annasr.jpg'">
+                                </div>
+                                <span class="leader-label">${member.role}</span>
+                                <h3 class="leader-name">${member.name}</h3>
+                                <p class="leader-bio">${member.bio}</p>
+                            </div>
+                        `).join('');
+                    }
+
+                    if (teachList && data.teachers) {
+                        teachList.innerHTML = data.teachers.map(teacher => `
+                            <div class="teacher-card reveal active">
+                                <div class="teacher-img-wrapper">
+                                    <img src="${teacher.image}" alt="${teacher.name}" class="teacher-img" onerror="this.src='Images/annasr.jpg'">
+                                </div>
+                                <h3 class="teacher-name">${teacher.name}</h3>
+                                <span class="teacher-role">${teacher.role}</span>
+                                <span class="teacher-dept">${teacher.department}</span>
+                            </div>
+                        `).join('');
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

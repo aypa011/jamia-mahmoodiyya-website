@@ -237,9 +237,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // 10.2 Load Faculty (from faculty.json)
         fetch('faculty.json')
             .then(res => res.json())
-            .then(facultyData => {
-                if (facultyList && facultyData) {
-                    facultyList.innerHTML = facultyData.map(member => `
+            .then(data => {
+                // Render Leadership
+                if (facultyList && data.leadership) {
+                    facultyList.innerHTML = data.leadership.map(member => `
                         <div class="leader-card glass-card reveal">
                             <div class="leader-img-wrapper">
                                 <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
@@ -249,12 +250,28 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="leader-bio">${member.bio}</p>
                         </div>
                     `).join('');
-                    
-                    facultyList.querySelectorAll('.reveal').forEach(el => {
-                        revealObserver.observe(el);
-                        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
-                    });
                 }
+
+                // Render Academic Team (Teachers)
+                const teacherList = document.getElementById('teacher-list');
+                if (teacherList && data.teachers) {
+                    teacherList.innerHTML = data.teachers.map(teacher => `
+                        <div class="teacher-card reveal">
+                            <div class="teacher-img-wrapper">
+                                <img src="${teacher.image}" alt="${teacher.name}" class="teacher-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
+                            </div>
+                            <h3 class="teacher-name">${teacher.name}</h3>
+                            <span class="teacher-role">${teacher.role}</span>
+                            <span class="teacher-dept">${teacher.department}</span>
+                        </div>
+                    `).join('');
+                }
+                
+                // Re-init reveal observer for all new elements
+                document.querySelectorAll('#faculty-list .reveal, #teacher-list .reveal').forEach(el => {
+                    revealObserver.observe(el);
+                    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
+                });
             }).catch(e => console.warn('Faculty load failed:', e));
 
         // 10.3 Load Event Calendar (from events.json)
