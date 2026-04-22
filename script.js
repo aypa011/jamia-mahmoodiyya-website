@@ -48,21 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Scroll to Top Button Logic - use direct style manipulation
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        if (scrollButton) {
-            if (scrollTop > 200) {
-                scrollButton.style.opacity = '1';
-                scrollButton.style.visibility = 'visible';
-                scrollButton.style.transform = 'translateY(0)';
-                scrollButton.style.pointerEvents = 'auto';
-            } else {
-                scrollButton.style.opacity = '0';
-                scrollButton.style.visibility = 'hidden';
-                scrollButton.style.transform = 'translateY(20px)';
-                scrollButton.style.pointerEvents = 'none';
-            }
-        }
+
 
         // Scroll Progress Bar
         if (progressBar) {
