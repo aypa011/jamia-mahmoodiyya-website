@@ -174,7 +174,8 @@ body.dark-theme .sub-page-hero {
 }
 
 .section-padding {
-    padding: 80px 0;
+    padding: 100px 0;
+    overflow: hidden;
 }
 
 .grid-2-col {
@@ -593,10 +594,13 @@ body.dark-theme .sub-page-hero {
 .hero-section {
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #0f172a;
+    overflow: hidden;
+    color: white;
     background-image: url('Images/mahmoodiyya new building.jpg');
     background-size: cover;
     background-position: center;
@@ -1382,15 +1386,16 @@ body.dark-theme .sub-page-hero {
 
     .nav-link {
         display: none;
-        /* Mobile menu hidden by default */
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--glass-bg);
+        background: var(--bg-surface);
         backdrop-filter: blur(16px);
         box-shadow: var(--shadow-md);
         padding: 20px;
+        z-index: 1000;
+        box-sizing: border-box;
     }
 
     .nav-link.active {
