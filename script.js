@@ -234,9 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 `).join('');
             }
 
-            // Render Faculty (Leadership)
-            if (facultyList && data.faculty) {
-                facultyList.innerHTML = data.faculty.map(member => `
+            // Render Faculty (Leadership) (from faculty.json)
+            const facultyResponse = await fetch('faculty.json');
+            const facultyData = await facultyResponse.json();
+
+            if (facultyList && facultyData) {
+                facultyList.innerHTML = facultyData.map(member => `
                     <div class="leader-card glass-card reveal">
                         <div class="leader-img-wrapper">
                             <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy">

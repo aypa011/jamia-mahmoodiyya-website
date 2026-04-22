@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Nasrudheen Darimi Ustad",
+        "role": "Founder & Chairman",
+        "image": "Images/darimi-ustad.png",
+        "bio": "A visionary leader dedicated to the spiritual and academic growth of the community."
+    },
+    {
+        "name": "Haseen Nurani Ustad",
+        "role": "General Secretary",
+        "image": "Images/nurani-ustad.jpeg",
+        "bio": "Overseeing the institutional development and ensuring excellence in education."
+    }
+]
