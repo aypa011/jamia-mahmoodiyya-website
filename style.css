@@ -976,8 +976,10 @@ body.dark-theme .sub-page-hero {
 }
 
 .donate-info .btn-primary:hover {
-    background: var(--bg-main);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    background: var(--primary-dark);
+    color: white;
+    box-shadow: 0 4px 15px rgba(4, 120, 87, 0.4);
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
