@@ -233,14 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         </span>
                     `).join('');
                 }
-
-                // Check YouTube Live Status
-                const liveBanner = document.getElementById('live-banner');
-                if (liveBanner && data.liveStream && data.liveStream.isLive) {
-                    document.getElementById('live-title').textContent = data.liveStream.title;
-                    document.getElementById('live-link').href = data.liveStream.link;
-                    liveBanner.style.display = 'block';
-                }
             }).catch(e => console.warn('Data load failed:', e));
 
 
