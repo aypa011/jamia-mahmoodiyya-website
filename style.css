@@ -62,8 +62,11 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -108,7 +111,8 @@ img {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 /* Sub-Page Hero Section */
@@ -2831,6 +2835,24 @@ body.dark-theme .leader-img {
         grid-template-columns: 1fr;
     }
     .map-info-panel {
-        padding: 30px;
+        padding: 20px;
+    }
+    .map-hotspots-container, .tour-wrapper {
+        height: 300px;
+    }
+    .hotspot {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem !important;
+        letter-spacing: -1px !important;
+    }
+    .section-padding {
+        padding: 40px 0;
     }
 }
