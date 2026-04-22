@@ -2509,3 +2509,13 @@ body.dark-theme .leader-img {
         font-size: 2.2rem !important;
     }
 }
+
+.mobile-only-pay {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only-pay {
+        display: inline-flex;
+    }
+}
