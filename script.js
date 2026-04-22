@@ -238,9 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('faculty.json')
             .then(res => res.json())
             .then(data => {
-                // Render Leadership
-                if (facultyList && data.leadership) {
-                    facultyList.innerHTML = data.leadership.map(member => `
+                // Render Faculty (Now simplified to only leadership)
+                const facultyData = data.leadership || data; // Handle both restructured and flat array
+                if (facultyList && facultyData) {
+                    facultyList.innerHTML = (Array.isArray(facultyData) ? facultyData : [facultyData]).map(member => `
                         <div class="leader-card glass-card reveal">
                             <div class="leader-img-wrapper">
                                 <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
@@ -251,24 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     `).join('');
                 }
-
-                // Render Academic Team (Teachers)
-                const teacherList = document.getElementById('teacher-list');
-                if (teacherList && data.teachers) {
-                    teacherList.innerHTML = data.teachers.map(teacher => `
-                        <div class="teacher-card reveal">
-                            <div class="teacher-img-wrapper">
-                                <img src="${teacher.image}" alt="${teacher.name}" class="teacher-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
-                            </div>
-                            <h3 class="teacher-name">${teacher.name}</h3>
-                            <span class="teacher-role">${teacher.role}</span>
-                            <span class="teacher-dept">${teacher.department}</span>
-                        </div>
-                    `).join('');
-                }
                 
-                // Re-init reveal observer for all new elements
-                document.querySelectorAll('#faculty-list .reveal, #teacher-list .reveal').forEach(el => {
+                // Re-init reveal observer for new elements
+                facultyList.querySelectorAll('.reveal').forEach(el => {
                     revealObserver.observe(el);
                     if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
                 });

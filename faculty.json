@@ -1,42 +1,14 @@
-{
-    "leadership": [
-        {
-            "name": "Nasrudheen Darimi Ustad",
-            "role": "Founder & Patron",
-            "image": "Images/darimi-ustad.png",
-            "bio": "A visionary leader dedicated to the spiritual and academic growth of the community."
-        },
-        {
-            "name": "Haseen Nurani Ustad",
-            "role": "Director",
-            "image": "Images/nurani-ustad.jpeg",
-            "bio": "Overseeing the institutional development and ensuring excellence in education."
-        }
-    ],
-    "teachers": [
-        {
-            "name": "Usthad Abdullah",
-            "role": "Chief Mudarris - Da'wa College",
-            "image": "Images/annasr.jpg",
-            "department": "Islamic Studies"
-        },
-        {
-            "name": "Usthad Ibrahim",
-            "role": "Hifz Mentor",
-            "image": "Images/annasr.jpg",
-            "department": "Quranic Studies"
-        },
-        {
-            "name": "Mr. Sahal",
-            "role": "Academic Coordinator - CBSE",
-            "image": "Images/annasr.jpg",
-            "department": "Modern Education"
-        },
-        {
-            "name": "Usthad Yusuf",
-            "role": "Senior Faculty",
-            "image": "Images/annasr.jpg",
-            "department": "Arabic Literature"
-        }
-    ]
-}
+[
+    {
+        "name": "Nasrudheen Darimi Ustad",
+        "role": "Founder & Patron",
+        "image": "Images/darimi-ustad.png",
+        "bio": "A visionary leader dedicated to the spiritual and academic growth of the community."
+    },
+    {
+        "name": "Haseen Nurani Ustad",
+        "role": "Director",
+        "image": "Images/nurani-ustad.jpeg",
+        "bio": "Overseeing the institutional development and ensuring excellence in education."
+    }
+]
