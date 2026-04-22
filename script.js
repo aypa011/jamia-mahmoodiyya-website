@@ -214,34 +214,76 @@ document.addEventListener('DOMContentLoaded', () => {
         currentYearEl.textContent = new Date().getFullYear();
     }
 
-    // 10. Live Updates from JSON
-    const updateNotices = async () => {
+    // 10. Load Dynamic Data from data.json (Notices, Faculty, Events)
+    const loadDynamicData = async () => {
         const marqueeTrack = document.querySelector('.marquee-track');
-        if (!marqueeTrack) return;
+        const facultyList = document.getElementById('faculty-list');
+        const calendarTrack = document.getElementById('calendar-track');
 
         try {
             const response = await fetch('data.json');
             const data = await response.json();
-            
-            if (data.notices && data.notices.length > 0) {
-                let html = '';
-                data.notices.forEach(notice => {
-                    html += `
-                        <span class="notice-item">
-                            ${notice.isNew ? '<span class="badge new-badge">NEW</span>' : ''}
-                            ${notice.text}
-                        </span>
-                    `;
-                });
-                // Duplicate for smooth marquee effect if needed, but the current track handles it
-                marqueeTrack.innerHTML = html;
+
+            // Render Notices (Marquee)
+            if (marqueeTrack && data.notices) {
+                marqueeTrack.innerHTML = data.notices.map(notice => `
+                    <span class="notice-item">
+                        ${notice.isNew ? '<span class="badge new-badge">NEW</span>' : ''}
+                        ${notice.text}
+                    </span>
+                `).join('');
             }
+
+            // Render Faculty (Leadership)
+            if (facultyList && data.faculty) {
+                facultyList.innerHTML = data.faculty.map(member => `
+                    <div class="leader-card glass-card reveal">
+                        <div class="leader-img-wrapper">
+                            <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy">
+                        </div>
+                        <span class="leader-label">${member.role}</span>
+                        <h3 class="leader-name">${member.name}</h3>
+                        <p class="leader-bio">${member.bio}</p>
+                    </div>
+                `).join('');
+                
+                // Re-init reveal observer for new elements
+                facultyList.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            }
+
+            // Render Event Calendar
+            if (calendarTrack && data.events_calendar) {
+                calendarTrack.innerHTML = data.events_calendar.map(event => {
+                    const dateObj = new Date(event.date);
+                    const day = dateObj.getDate();
+                    const month = dateObj.toLocaleString('default', { month: 'short' });
+                    return `
+                        <div class="calendar-card reveal">
+                            <div class="cal-date">
+                                <span class="cal-day">${day}</span>
+                                <span class="cal-month">${month}</span>
+                            </div>
+                            <div class="cal-info">
+                                <h3>${event.title}</h3>
+                                <div class="cal-meta">
+                                    <span><i class="fa-regular fa-clock"></i> ${event.time}</span>
+                                    <span><i class="fa-solid fa-location-dot"></i> ${event.location}</span>
+                                </div>
+                                <span class="cal-type">${event.type}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                calendarTrack.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            }
+
         } catch (error) {
-            console.error('Error fetching notices:', error);
+            console.error('Error loading dynamic data:', error);
         }
     };
 
-    updateNotices();
+    loadDynamicData();
 
     // 11. Search Functionality
     const searchBtn = document.createElement('div');

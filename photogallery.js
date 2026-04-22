@@ -5,6 +5,7 @@
 
 const renderGallery = async () => {
     const filterContainer = document.querySelector('.gallery-filters');
+    const searchInput = document.getElementById('gallerySearch');
     if (!filterContainer) return;
 
     try {
@@ -16,27 +17,44 @@ const renderGallery = async () => {
                 <button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-filter="${cat.toLowerCase()}">${cat}</button>
             `).join('');
 
+            const applyFilters = () => {
+                const activeBtn = document.querySelector(".filter-btn.active");
+                const filter = activeBtn ? activeBtn.getAttribute("data-filter") : 'all';
+                const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+                const items = document.querySelectorAll(".gallery-item");
+                
+                items.forEach(item => {
+                    const cat = item.getAttribute("data-category").toLowerCase();
+                    const caption = item.querySelector('.gallery-caption').textContent.toLowerCase();
+                    
+                    const matchesFilter = (filter === 'all' || cat === filter);
+                    const matchesSearch = caption.includes(searchTerm) || cat.includes(searchTerm);
+
+                    if (matchesFilter && matchesSearch) {
+                        item.style.display = "block";
+                        item.style.opacity = "1";
+                        item.style.transform = "scale(1)";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+                
+                updateVisibleIndices();
+            };
+
             // Re-attach filter listeners
             document.querySelectorAll(".filter-btn").forEach(btn => {
                 btn.addEventListener("click", () => {
                     document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
                     btn.classList.add("active");
-
-                    const filter = btn.getAttribute("data-filter");
-                    const items = document.querySelectorAll(".gallery-item");
-                    
-                    items.forEach(item => {
-                        const cat = item.getAttribute("data-category").toLowerCase();
-                        if (filter === 'all' || cat === filter) {
-                            item.style.display = "block";
-                        } else {
-                            item.style.display = "none";
-                        }
-                    });
-                    
-                    updateVisibleIndices();
+                    applyFilters();
                 });
             });
+
+            // Search input listener
+            if (searchInput) {
+                searchInput.addEventListener('input', applyFilters);
+            }
         }
     } catch (err) {
         console.error('Error loading gallery categories:', err);

@@ -2500,6 +2500,147 @@ body.dark-theme .leader-img {
     }
 }
 
+/* Calendar Grid Styles */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.calendar-card {
+    background: var(--bg-surface);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark-theme .calendar-card {
+    border-color: rgba(255,255,255,0.05);
+}
+
+.calendar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.cal-date {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    height: fit-content;
+    text-align: center;
+    min-width: 60px;
+}
+
+.cal-day {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.cal-month {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cal-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-heading);
+}
+
+.cal-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cal-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cal-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(4, 120, 87, 0.1);
+    color: var(--primary-color);
+    margin-top: 15px;
+}
+
+/* Gallery Advanced Controls */
+.gallery-controls {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.gallery-search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.gallery-search-wrapper input {
+    width: 100%;
+    padding: 15px 25px 15px 55px;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: var(--bg-surface);
+    color: var(--text-main);
+    font-size: 1rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .gallery-search-wrapper input {
+    border-color: rgba(255,255,255,0.1);
+}
+
+.gallery-search-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.15);
+}
+
+.search-icon {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .gallery-search-wrapper {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;

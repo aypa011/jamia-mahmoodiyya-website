@@ -340,25 +340,8 @@
                     <h2 data-i18n="leadership-title">Our Leadership</h2>
                     <div class="divider"></div>
                 </div>
-                <div class="leadership-grid">
-                    <!-- Founder Card -->
-                    <div class="leader-card glass-card">
-                        <div class="leader-img-wrapper">
-                            <img src="Images/darimi-ustad.png" alt="Nasrudheen Darimi Ustad" class="leader-img">
-                        </div>
-                        <span class="leader-label" data-i18n="founder-label">Founder & Patron</span>
-                        <h3 class="leader-name">Nasrudheen Darimi Ustad</h3>
-                        <p class="leader-bio" data-i18n="darimi-ustad-bio">A visionary leader who founded Jamia Mahmoodiyya in 1986. Dedicated to bridging classical Islamic learning with modern academic excellence.</p>
-                    </div>
-                    <!-- Director Card -->
-                    <div class="leader-card glass-card">
-                        <div class="leader-img-wrapper">
-                            <img src="Images/nurani-ustad.jpeg" alt="Haseen Nurani Ustad" class="leader-img">
-                        </div>
-                        <span class="leader-label" data-i18n="director-label">Director</span>
-                        <h3 class="leader-name">Haseen Nurani Ustad</h3>
-                        <p class="leader-bio" data-i18n="nurani-ustad-bio">Leading the administrative and spiritual growth of our institutions with a dedication to student welfare and academic rigour.</p>
-                    </div>
+                <div class="leadership-grid" id="faculty-list">
+                    <!-- Faculty will be loaded dynamically from data.json -->
                 </div>
             </div>
         </section>
@@ -496,6 +479,20 @@
                         });
                     });
                 </script>
+            </div>
+        </section>
+
+        <!-- Dynamic Event Calendar -->
+        <section id="event-calendar" class="section-padding">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2 data-i18n="calendar-title">Event Calendar</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Mark your dates for upcoming institutional events and programs.</p>
+                </div>
+                <div class="calendar-grid" id="calendar-track">
+                    <!-- Events will be loaded dynamically -->
+                </div>
             </div>
         </section>
 

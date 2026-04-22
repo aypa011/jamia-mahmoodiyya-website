@@ -1,9 +1,21 @@
 {
     "notices": [
-        { "text": "Admissions now open for Hifz College and Edu Village 2026-2027! Apply online via the Admissions portal.", "isNew": true },
-        { "text": "Last date for submitting Hifz College applications is March 31, 2026.", "isNew": true },
-        { "text": "Upcoming Event: Annual Islamic Conference to be held next month.", "isNew": false },
-        { "text": "Important parent-teacher meeting for CBSE students on the upcoming Saturday.", "isNew": true }
+        {
+            "text": "Admissions now open for Hifz College and Edu Village 2026-2027! Apply online via the Admissions portal.",
+            "isNew": true
+        },
+        {
+            "text": "Last date for submitting Hifz College applications is March 31, 2026.",
+            "isNew": true
+        },
+        {
+            "text": "Upcoming Event: Annual Islamic Conference to be held next month.",
+            "isNew": false
+        },
+        {
+            "text": "Important parent-teacher meeting for CBSE students on the upcoming Saturday.",
+            "isNew": true
+        }
     ],
     "institutions": [
         {
@@ -11,18 +23,36 @@
             "name": "Annasr Global Academy - Da'wa College",
             "image": "Images/annasr.jpg",
             "description": "Annasr Global Academy provides quality education that seamlessly integrates both essential Islamic teachings and comprehensive modern studies. Our Arabic Villa serves as the +1 and +2 boys campus.",
-            "features": ["Arabic Villa (+1 and +2 boys campus)", "Integrated Curriculum", "State-of-the-Art Classrooms", "Experienced Faculty"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Arabic Villa (+1 and +2 boys campus)",
+                "Integrated Curriculum",
+                "State-of-the-Art Classrooms",
+                "Experienced Faculty"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
-            "studentCount": 250
+            "studentCount": 240
         },
         {
             "id": "zawiya",
             "name": "Zawiyathul Qur'an - Hifz College",
             "image": "Images/zawiyathul_quran.png",
             "description": "Zawiyathul Qur'an is an esteemed institution dedicated exclusively to the memorization and deep understanding of the Holy Qur'an. Students are guided by expert mentors to perfect their recitation.",
-            "features": ["Hifz Program", "Tajweed Mastery", "Spiritual Mentorship", "Islamic Studies"],
-            "facilities": ["Residential Campus", "Prayer Hall", "Recreation Area"],
+            "features": [
+                "Hifz Program",
+                "Tajweed Mastery",
+                "Spiritual Mentorship",
+                "Islamic Studies"
+            ],
+            "facilities": [
+                "Residential Campus",
+                "Prayer Hall",
+                "Recreation Area"
+            ],
             "facultyCount": 10,
             "studentCount": 120
         },
@@ -31,8 +61,17 @@
             "name": "Edu Village - HS boys campus",
             "image": "Images/edu_village.png",
             "description": "Edu Village is our dedicated HS boys campus combining rigorous academic curriculum with profound Islamic teaching to shape young minds in a collaborative, supportive environment.",
-            "features": ["High School Boys Campus", "Advanced Degree Programs", "Research Facilities", "Collaborative Campus"],
-            "facilities": ["Modern Hostel", "Science Labs", "Library"],
+            "features": [
+                "High School Boys Campus",
+                "Advanced Degree Programs",
+                "Research Facilities",
+                "Collaborative Campus"
+            ],
+            "facilities": [
+                "Modern Hostel",
+                "Science Labs",
+                "Library"
+            ],
             "facultyCount": 20,
             "studentCount": 400
         },
@@ -41,8 +80,17 @@
             "name": "Women's College (+1 to UG)",
             "image": "Images/womens_college.png",
             "description": "Our Women's College empowers female students through higher education from +1 to UG degrees in both Islamic and secular fields in a secure, supportive environment.",
-            "features": ["Exclusive Female Campus", "+1 to Undergraduate Programs", "Skill Development", "Safe Environment"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Exclusive Female Campus",
+                "+1 to Undergraduate Programs",
+                "Skill Development",
+                "Safe Environment"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -51,8 +99,17 @@
             "name": "Olive Garden HS Girls School",
             "image": "Images/olive_garden.png",
             "description": "Olive Garden is our dedicated High School for girls, providing an empowering, secure environment combining modern education with core Islamic values.",
-            "features": ["High School Girls Campus", "Specialized Seminars", "Interactive Sessions", "Continuing Education"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "High School Girls Campus",
+                "Specialized Seminars",
+                "Interactive Sessions",
+                "Continuing Education"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -61,8 +118,17 @@
             "name": "Al Madrasathul Mahmoodiyya",
             "image": "Images/madrasa.png",
             "description": "Al Madrasathul Mahmoodiyya focuses on nurturing young minds with core moral values and academic excellence. It serves as the starting point for children to understand the fundamental principles of Islam.",
-            "features": ["Basic Islamic Education", "Moral Guidance", "Interactive Learning", "Community Engagement"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Basic Islamic Education",
+                "Moral Guidance",
+                "Interactive Learning",
+                "Community Engagement"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -71,8 +137,17 @@
             "name": "Mahmoodiyya English School - CBSE school",
             "image": "Images/logo eng schl.jpg",
             "description": "Mahmoodiyya English School follows the CBSE curriculum, offering a competitive, high-standard secular education within a safe, Islamic environment.",
-            "features": ["CBSE Curriculum", "Modern Laboratories", "Sports Facilities", "Holistic Development"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "CBSE Curriculum",
+                "Modern Laboratories",
+                "Sports Facilities",
+                "Holistic Development"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -81,8 +156,17 @@
             "name": "Thibyan Pre School",
             "image": "Images/annasr.jpg",
             "description": "Thibyan Pre School creates a nurturing beginning for the youngest members of our community, instilling early Islamic morals with modern play-based learning.",
-            "features": ["Early Childhood Education", "Play-based Learning", "Safe Environment", "Core Values"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Early Childhood Education",
+                "Play-based Learning",
+                "Safe Environment",
+                "Core Values"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -91,8 +175,17 @@
             "name": "Smart Seed Premium Preschool",
             "image": "Images/smart_seed.png",
             "description": "Smart Seed Premium Preschool provides a nurturing, playful, and high-end early childhood education experience. We focus on building a strong intellectual and moral foundation for toddlers.",
-            "features": ["Premium Play-based Learning", "Safe & Aesthetic Environment", "Early Moral Values", "Dedicated Child Experts"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Premium Play-based Learning",
+                "Safe & Aesthetic Environment",
+                "Early Moral Values",
+                "Dedicated Child Experts"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -101,8 +194,17 @@
             "name": "IBES",
             "image": "Images/annasr.jpg",
             "description": "IBES provides advanced educational services and structured learning environments to promote excellence across varied academic pursuits.",
-            "features": ["Advanced Studies", "Research Excellence", "Expert Faculty", "Integrated Approach"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Advanced Studies",
+                "Research Excellence",
+                "Expert Faculty",
+                "Integrated Approach"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         },
@@ -111,11 +213,65 @@
             "name": "Masajid",
             "image": "Images/masajid.png",
             "description": "The heart of our institution, the Masajid (Masjid Swahaba, Mahmoodiyya Juma Masjid Moonnupeedika, Masjid Hamdha wa Avathif), provide a serene and spiritual environment for daily prayers and community gatherings.",
-            "features": ["Masjid Swahaba", "Mahmoodiyya Juma Masjid", "Masjid Hamdha wa Avathif", "Community Hub"],
-            "facilities": ["Digital Library", "Seminar Hall", "Spiritual Center"],
+            "features": [
+                "Masjid Swahaba",
+                "Mahmoodiyya Juma Masjid",
+                "Masjid Hamdha wa Avathif",
+                "Community Hub"
+            ],
+            "facilities": [
+                "Digital Library",
+                "Seminar Hall",
+                "Spiritual Center"
+            ],
             "facultyCount": 15,
             "studentCount": 250
         }
     ],
-    "gallery_categories": ["All", "Campus", "Events", "Sports", "Academic"]
+    "faculty": [
+        {
+            "name": "Nasrudheen Darimi Ustad",
+            "role": "Founder & Chairman",
+            "image": "Images/darimi-ustad.png",
+            "bio": "A visionary leader dedicated to the spiritual and academic growth of the community."
+        },
+        {
+            "name": "Haseen Nurani Ustad",
+            "role": "General Secretary",
+            "image": "Images/nurani-ustad.jpeg",
+            "bio": "Overseeing the institutional development and ensuring excellence in education."
+        }
+    ],
+    "events_calendar": [
+        {
+            "title": "Annual Islamic Conference",
+            "date": "2026-05-15",
+            "time": "9:00 AM",
+            "location": "Main Auditorium",
+            "type": "Conference"
+        },
+        {
+            "title": "CBSE Parent-Teacher Meet",
+            "date": "2026-04-25",
+            "time": "10:00 AM",
+            "location": "School Hall",
+            "type": "Meeting"
+        },
+        {
+            "title": "Hifz Graduation Ceremony",
+            "date": "2026-06-10",
+            "time": "5:00 PM",
+            "location": "Zawiyathul Quran Campus",
+            "type": "Ceremony"
+        }
+    ],
+    "gallery_categories": [
+        "All",
+        "Campus",
+        "Events",
+        "Sports",
+        "Academic",
+        "Hifz",
+        "Girls School"
+    ]
 }

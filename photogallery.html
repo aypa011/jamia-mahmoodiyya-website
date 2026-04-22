@@ -119,13 +119,20 @@
                     <p class="section-desc">Glimpses of life and learning at Jamia Mahmoodiyya.</p>
                 </div>
 
-                <!-- Filter Tabs -->
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">All Photos</button>
-                    <button class="filter-btn" data-filter="events">Events</button>
-                    <button class="filter-btn" data-filter="academic">Academic</button>
-                    <button class="filter-btn" data-filter="campus">Campus</button>
-                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                <!-- Search & Filters -->
+                <div class="gallery-controls reveal">
+                    <div class="gallery-search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="gallerySearch" placeholder="Search photos by event, category, or keyword..." aria-label="Search Gallery">
+                    </div>
+                    
+                    <div class="gallery-filters" id="galleryFilters">
+                        <!-- Filters will be loaded dynamically -->
+                        <button class="filter-btn active" data-filter="all">All Photos</button>
+                        <button class="filter-btn" data-filter="events">Events</button>
+                        <button class="filter-btn" data-filter="academic">Academic</button>
+                        <button class="filter-btn" data-filter="campus">Campus</button>
+                    </div>
                 </div>
 
                 <!-- Gallery Grid — hardcoded for instant display -->
