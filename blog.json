@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "The Importance of Spiritual Education in Modern Times",
+        "excerpt": "Exploring how traditional Islamic values provide a foundation for success in the digital age.",
+        "author": "Nasrudheen Darimi Ustad",
+        "date": "2026-04-10",
+        "image": "Images/mahmoodiyya new building.jpg",
+        "category": "Education"
+    },
+    {
+        "id": 2,
+        "title": "Ramadan Preparation: A Guide for Students",
+        "excerpt": "Practical tips for balancing academic excellence with spiritual growth during the holy month.",
+        "author": "Haseen Nurani Ustad",
+        "date": "2026-04-05",
+        "image": "Images/annasr.jpg",
+        "category": "Spiritual"
+    },
+    {
+        "id": 3,
+        "title": "Milestones: 40 Years of Excellence",
+        "excerpt": "A look back at the journey of Jamia Mahmoodiyya from a small madrasa to a multi-institution complex.",
+        "author": "Admin",
+        "date": "2026-03-28",
+        "image": "Images/mahmoodiyya main view.jpg",
+        "category": "History"
+    }
+]
