@@ -251,9 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 facultyList.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
             }
 
-            // Render Event Calendar
-            if (calendarTrack && data.events_calendar) {
-                calendarTrack.innerHTML = data.events_calendar.map(event => {
+            // Render Event Calendar (from events.json)
+            const eventResponse = await fetch('events.json');
+            const eventData = await eventResponse.json();
+
+            if (calendarTrack && eventData) {
+                calendarTrack.innerHTML = eventData.map(event => {
                     const dateObj = new Date(event.date);
                     const day = dateObj.getDate();
                     const month = dateObj.toLocaleString('default', { month: 'short' });
