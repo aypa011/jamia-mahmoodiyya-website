@@ -243,41 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }).catch(e => console.warn('Data load failed:', e));
 
-        // 10.4 Load Blog Articles (from blog.json)
-        const blogList = document.getElementById('blog-list');
-        fetch('blog.json')
-            .then(res => res.json())
-            .then(articles => {
-                if (blogList && articles) {
-                    // Show latest 3 articles
-                    blogList.innerHTML = articles.slice(0, 3).map(post => `
-                        <article class="blog-card reveal">
-                            <div class="blog-img-box">
-                                <img src="${post.image}" alt="${post.title}" loading="lazy">
-                                <span class="blog-badge">${post.category}</span>
-                            </div>
-                            <div class="blog-info">
-                                <div class="blog-meta">
-                                    <span><i class="fa-regular fa-calendar"></i> ${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                                </div>
-                                <h3 class="blog-title">${post.title}</h3>
-                                <p class="blog-excerpt">${post.excerpt}</p>
-                                <div class="blog-footer">
-                                    <div class="blog-author">
-                                        <i class="fa-solid fa-user-tie"></i> ${post.author}
-                                    </div>
-                                    <a href="blog.html?id=${post.id}" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </article>
-                    `).join('');
-
-                    blogList.querySelectorAll('.reveal').forEach(el => {
-                        revealObserver.observe(el);
-                        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
-                    });
-                }
-            }).catch(e => console.warn('Blog load failed:', e));
 
         // 10.2 Load Faculty (from faculty.json)
         fetch('faculty.json')
