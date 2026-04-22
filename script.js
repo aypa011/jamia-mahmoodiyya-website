@@ -330,19 +330,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const hotspots = document.querySelectorAll('.hotspot');
     const infoContent = document.getElementById('map-info-content');
 
-    hotspots.forEach(spot => {
-        spot.addEventListener('mouseenter', () => {
-            const title = spot.getAttribute('data-title');
-            const desc = spot.getAttribute('data-desc');
+    const updateMapInfo = (spot) => {
+        const title = spot.getAttribute('data-title');
+        const desc = spot.getAttribute('data-desc');
+        
+        if (infoContent) {
+            // Remove class to restart animation
+            infoContent.classList.remove('reveal');
             
-            if (infoContent) {
-                infoContent.innerHTML = `
-                    <h3>${title}</h3>
-                    <p>${desc}</p>
-                `;
-                infoContent.classList.add('reveal');
-            }
+            infoContent.innerHTML = `
+                <h3>${title}</h3>
+                <p>${desc}</p>
+            `;
+            
+            // Force reflow for animation
+            void infoContent.offsetWidth;
+            infoContent.classList.add('reveal');
+        }
+    };
+
+    hotspots.forEach(spot => {
+        // Desktop Hover
+        spot.addEventListener('mouseenter', () => updateMapInfo(spot));
+        
+        // Mobile Tap / Interaction
+        spot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            updateMapInfo(spot);
+            
+            // Highlight the selected spot
+            hotspots.forEach(s => s.classList.remove('active-spot'));
+            spot.classList.add('active-spot');
         });
+    });
+
+    // Reset when clicking outside hotspots
+    document.addEventListener('click', () => {
+        if (infoContent) {
+            // Keep the last info or reset? User usually wants to keep the last one or reset.
+            // Let's keep it for better UX.
+        }
     });
 
 });
