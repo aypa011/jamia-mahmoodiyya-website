@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Images/annasr.jpg">
-    <title>Jamia Mahmoodiyya | Fostering Excellence</title>
+    <title>Jamia Mahmoodiyya - Official Website</title>
+    
+    <!-- Pannellum 360 Viewer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <!-- SEO & Open Graph Meta Tags -->
     <meta name="description"
         content="Jamia Mahmoodiyya is an Islamic Based institution fostering excellence in Education & Spirituality, founded by Usthad Nasrudheen Darimi.">
@@ -304,7 +308,7 @@
 
         <!-- Interactive Campus Map Section -->
         <section class="campus-map-section section-padding" id="campus-map">
-            <div class="container reveal">
+            <div class="container">
                 <div class="section-header">
                     <h2>Interactive Campus Map</h2>
                     <div class="divider"></div>
@@ -339,7 +343,7 @@
 
         <!-- Virtual Tour Section (360° View) -->
         <section class="virtual-tour-section section-padding bg-surface" id="virtual-tour">
-            <div class="container reveal">
+            <div class="container">
                 <div class="section-header">
                     <h2>360° Virtual Tour</h2>
                     <div class="divider"></div>
@@ -347,17 +351,24 @@
                 </div>
 
                 <div class="tour-wrapper glass-card">
-                    <div class="tour-placeholder">
-                        <img src="Images/jm bg.jpg" alt="Virtual Tour Placeholder" class="tour-img">
-                        <div class="tour-overlay">
-                            <div class="play-btn-circle">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <h3>Start 360° Virtual Tour</h3>
-                            <p>Experience our campus in immersive 360°</p>
-                        </div>
-                    </div>
+                    <div id="panorama" style="width: 100%; height: 500px;"></div>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Initialize Pannellum when the section is reached or immediately
+                        // For demonstration, we use the 'jm bg.jpg' as the 360 image
+                        // In a real scenario, this would be an equirectangular 360 image
+                        pannellum.viewer('panorama', {
+                            "type": "equirectangular",
+                            "panorama": "Images/jm bg.jpg",
+                            "autoLoad": true,
+                            "autoRotate": -2,
+                            "title": "Jamia Mahmoodiyya Campus",
+                            "author": "Jamia Media"
+                        });
+                    });
+                </script>
             </div>
         </section>
 
