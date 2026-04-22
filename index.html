@@ -101,8 +101,9 @@
                     <ul>
                         <li><a href="index.html" data-i18n="nav-home">Home</a></li>
                         <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
-                        <li><a href="#our-institutions" data-i18n="nav-institutions">Institutions</a></li>
-                        <li><a href="#About-us" data-i18n="nav-about">About Us</a></li>
+                        <li><a href="index.html#our-institutions" data-i18n="nav-institutions">Institutions</a></li>
+                        <li><a href="index.html#virtual-tour"><i class="fa-solid fa-vr-cardboard"></i> 360° View</a></li>
+                        <li><a href="index.html#About-us" data-i18n="nav-about">About Us</a></li>
                         <li><a href="#donate" data-i18n="nav-donate">Donate</a></li>
                         <li class="media-hover"><a href="#" data-i18n="nav-media">Media <i
                                     class="fa-solid fa-angle-down"></i></a>
@@ -296,6 +297,66 @@
                             <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Interactive Campus Map Section -->
+        <section class="campus-map-section section-padding" id="campus-map">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Interactive Campus Map</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Explore our expansive campus and find all our key facilities and institutions.</p>
+                </div>
+                
+                <div class="map-interactive-wrapper glass-card">
+                    <div class="map-hotspots-container">
+                        <img src="Images/mahmoodiyya new building.jpg" alt="Campus Map" class="map-base-img">
+                        
+                        <!-- Hotspots -->
+                        <div class="hotspot" style="top: 30%; left: 45%;" data-title="Main Administrative Block" data-desc="The central hub for all administrative and leadership activities.">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div class="hotspot" style="top: 55%; left: 30%;" data-title="Edu Village" data-desc="The integrated boys campus combining HS and higher secondary education.">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div class="hotspot" style="top: 40%; left: 70%;" data-title="Zawiyathul Qur'an" data-desc="Our premier Hifz college dedicated to Quranic memorization.">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="map-info-panel">
+                        <div id="map-info-content">
+                            <h3>Campus Highlights</h3>
+                            <p>Hover over the markers on the map to see details about our facilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Virtual Tour Section (360° View) -->
+        <section class="virtual-tour-section section-padding bg-surface" id="virtual-tour">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>360° Virtual Tour</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Take a virtual walk through our campus and experience the environment of Jamia Mahmoodiyya.</p>
+                </div>
+
+                <div class="tour-wrapper glass-card">
+                    <div class="tour-placeholder">
+                        <img src="Images/jm bg.jpg" alt="Virtual Tour Placeholder" class="tour-img">
+                        <div class="tour-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                            <h3>Start 360° Virtual Tour</h3>
+                            <p>Experience our campus in immersive 360°</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
