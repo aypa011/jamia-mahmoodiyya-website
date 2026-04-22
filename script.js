@@ -222,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await fetch('data.json');
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             const data = await response.json();
 
             // Render Notices (Marquee)
@@ -234,15 +235,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 `).join('');
             }
 
-            // Render Faculty (Leadership) (from faculty.json)
-            const facultyResponse = await fetch('faculty.json');
-            const facultyData = await facultyResponse.json();
-
-            if (facultyList && facultyData) {
-                facultyList.innerHTML = facultyData.map(member => `
+            // Render Faculty (Leadership)
+            if (facultyList && data.faculty) {
+                facultyList.innerHTML = data.faculty.map(member => `
                     <div class="leader-card glass-card reveal">
                         <div class="leader-img-wrapper">
-                            <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy">
+                            <img src="${member.image}" alt="${member.name}" class="leader-img" loading="lazy" onerror="this.src='Images/annasr.jpg'">
                         </div>
                         <span class="leader-label">${member.role}</span>
                         <h3 class="leader-name">${member.name}</h3>
@@ -251,15 +249,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 `).join('');
                 
                 // Re-init reveal observer for new elements
-                facultyList.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+                facultyList.querySelectorAll('.reveal').forEach(el => {
+                    revealObserver.observe(el);
+                    // Force active if in viewport
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
             }
 
-            // Render Event Calendar (from events.json)
-            const eventResponse = await fetch('events.json');
-            const eventData = await eventResponse.json();
-
-            if (calendarTrack && eventData) {
-                calendarTrack.innerHTML = eventData.map(event => {
+            // Render Event Calendar
+            if (calendarTrack && data.events_calendar) {
+                calendarTrack.innerHTML = data.events_calendar.map(event => {
                     const dateObj = new Date(event.date);
                     const day = dateObj.getDate();
                     const month = dateObj.toLocaleString('default', { month: 'short' });
@@ -281,7 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                 }).join('');
                 
-                calendarTrack.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+                calendarTrack.querySelectorAll('.reveal').forEach(el => {
+                    revealObserver.observe(el);
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
             }
 
         } catch (error) {
