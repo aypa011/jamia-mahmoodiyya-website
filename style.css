@@ -411,6 +411,12 @@ body.dark-theme .sub-page-hero {
     .nav-img img {
         height: 50px;
     }
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .nav-img img {
@@ -438,6 +444,9 @@ body.dark-theme .sub-page-hero {
     font-size: 1.05rem;
     padding: 10px 0;
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .nav-link>ul>li>a::after {
