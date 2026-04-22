@@ -72,6 +72,7 @@ body {
     background-color: var(--bg-main);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
 }
 
 h1,
@@ -835,7 +836,7 @@ body.dark-theme .sub-page-hero {
 
 .donate-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
@@ -1904,7 +1905,7 @@ body.dark-theme .contact-list li:hover .icon-box {
 /* Institutions Grid Styling */
 .inst-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
@@ -2831,6 +2832,9 @@ body.dark-theme .leader-img {
         grid-template-columns: 1fr;
     }
     .map-info-panel {
-        padding: 30px;
+        padding: 25px;
+    }
+    .map-hotspots-container, .tour-wrapper {
+        height: 350px;
     }
 }
