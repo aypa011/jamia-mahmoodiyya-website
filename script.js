@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Sticky Header & Scroll to Top Button
     const header = document.querySelector('.main-head');
-    const scrollButton = document.getElementById('scroll-to-top');
     const progressBar = document.getElementById('scroll-progress-bar');
 
     const handleScroll = () => {

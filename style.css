@@ -1592,33 +1592,7 @@ body.dark-theme .sub-page-hero {
     }
 }
 
-/* ==========================================================================
-   Floating WhatsApp Widget
-   ========================================================================== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 90px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    animation: bounce 2s infinite;
-}
 
-.floating-whatsapp:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-    color: white;
-}
 
 @keyframes bounce {
 
@@ -2328,32 +2302,7 @@ body.dark-theme .prayer-time {
     line-height: 1.7 !important;
 }
 
-/* ==========================================================================
-   Floating Buttons — properly stacked
-   ========================================================================== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 56px;
-    height: 56px;
-    background: var(--whatsapp);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-    z-index: 9000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-}
 
-.floating-whatsapp:hover {
-    transform: scale(1.12) translateY(-4px);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-}
 
 
 
