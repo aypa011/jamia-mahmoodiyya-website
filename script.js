@@ -278,58 +278,24 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="cal-month">${month}</span>
                                 </div>
                                 <div class="cal-info">
-                                    <h3 class="cal-title">${event.title}</h3>
-                                    <p class="cal-desc">${event.description}</p>
+                                    <h3>${event.title}</h3>
+                                    <div class="cal-meta">
+                                        <span><i class="fa-regular fa-clock"></i> ${event.time}</span>
+                                        <span><i class="fa-solid fa-location-dot"></i> ${event.location}</span>
+                                    </div>
+                                    <span class="cal-type">${event.type}</span>
                                 </div>
                             </div>
                         `;
                     }).join('');
-
+                    
                     calendarTrack.querySelectorAll('.reveal').forEach(el => {
                         revealObserver.observe(el);
                         if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
                     });
                 }
             }).catch(e => console.warn('Events load failed:', e));
-
-        // 10.5 Load Our Journey Timeline (from journey.json)
-        const journeyTimeline = document.getElementById('journey-timeline');
-        fetch('journey.json')
-            .then(res => res.json())
-            .then(milestones => {
-                if (journeyTimeline && milestones) {
-                    journeyTimeline.innerHTML = milestones.map((item, index) => `
-                        <div class="timeline-item ${index % 2 === 0 ? 'left' : 'right'} reveal">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content glass-card">
-                                <span class="timeline-year">${item.year}</span>
-                                <h3>${item.title}</h3>
-                                <p>${item.description}</p>
-                            </div>
-                        </div>
-                    `).join('');
-
-                    journeyTimeline.querySelectorAll('.reveal').forEach(el => {
-                        revealObserver.observe(el);
-                        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
-                    });
-                }
-            }).catch(e => console.warn('Journey load failed:', e));
     };
-
-    // 11. Quick Action FAB Toggle
-    const fabBtn = document.getElementById('fab-main');
-    const quickMenu = document.getElementById('quick-action-menu');
-    if (fabBtn && quickMenu) {
-        fabBtn.addEventListener('click', () => {
-            quickMenu.classList.toggle('active');
-        });
-
-        // Close on scroll or outside click
-        window.addEventListener('scroll', () => {
-            if (quickMenu.classList.contains('active')) quickMenu.classList.remove('active');
-        });
-    }
 
     loadDynamicData();
 
