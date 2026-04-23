@@ -125,6 +125,12 @@
                 <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+
+                <!-- Voice Navigation Trigger -->
+                <div id="voice-nav-btn" title="Voice Navigation" class="voice-trigger">
+                    <i class="fa-solid fa-microphone"></i>
+                    <span class="voice-tip">Try "Go to Admissions"</span>
+                </div>
             </div>
         </nav>
     </header>
@@ -437,6 +443,86 @@
             </div>
         </section>
 
+        <!-- Digital Library Preview Section -->
+        <section id="library" class="section-padding">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2 data-i18n="library-title">Digital Library</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Explore our curated collection of spiritual and academic publications.</p>
+                </div>
+
+                <div class="library-grid">
+                    <div class="book-card glass-card reveal" data-pdf="sample-book.pdf">
+                        <div class="book-container">
+                            <div class="book-3d">
+                                <img src="Images/book-cover-1.jpg" alt="Book 1" class="book-cover" onerror="this.src='https://placehold.co/400x600/047857/ffffff?text=Islamic+Philosophy'">
+                                <div class="book-side"></div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Islamic Philosophy</h3>
+                            <p>An introduction to classical thought.</p>
+                            <button class="btn btn-outline preview-btn">Preview Book</button>
+                        </div>
+                    </div>
+
+                    <div class="book-card glass-card reveal" data-pdf="sample-book.pdf">
+                        <div class="book-container">
+                            <div class="book-3d">
+                                <img src="Images/book-cover-2.jpg" alt="Book 2" class="book-cover" onerror="this.src='https://placehold.co/400x600/10b981/ffffff?text=Modern+Ethics'">
+                                <div class="book-side"></div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Modern Ethics</h3>
+                            <p>Spiritual guidance for the digital age.</p>
+                            <button class="btn btn-outline preview-btn">Preview Book</button>
+                        </div>
+                    </div>
+
+                    <div class="book-card glass-card reveal" data-pdf="sample-book.pdf">
+                        <div class="book-container">
+                            <div class="book-3d">
+                                <img src="Images/book-cover-3.jpg" alt="Book 3" class="book-cover" onerror="this.src='https://placehold.co/400x600/064e3b/ffffff?text=Quranic+Insights'">
+                                <div class="book-side"></div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Quranic Insights</h3>
+                            <p>Exploring the depths of the Holy Word.</p>
+                            <button class="btn btn-outline preview-btn">Preview Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Virtual Guestbook Map Section -->
+        <section id="guestbook" class="section-padding bg-surface">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Global Guestbook</h2>
+                    <div class="divider"></div>
+                    <p class="section-desc">Join our global community. Pin your location and leave a message of support.</p>
+                </div>
+
+                <div class="guestbook-container glass-card">
+                    <div id="guestbook-map" style="width: 100%; height: 500px; background: #e0e0e0; position: relative;">
+                        <!-- Map implementation will go here -->
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <p>Loading Interactive Map...</p>
+                        </div>
+                    </div>
+                    <div class="guestbook-controls">
+                        <button id="add-pin-btn" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i> Add My Pin</button>
+                        <div id="pin-count">Join 1,240+ supporters worldwide</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Dynamic Event Calendar -->
         <section id="event-calendar" class="section-padding">
             <div class="container reveal">
@@ -466,9 +552,9 @@
                             <div class="bank-details">
                                 <p><strong>Bank Name:</strong> Kerala Bank</p>
                                 <p><strong>Account Name:</strong> Jamiya Mahmoodiyya Trust</p>
-                                <p><strong>Account Number:</strong> 150010801000204</p>
-                                <p><strong>IFSC Code:</strong> KSBK0001500</p>
-                                <p><strong>Branch:</strong> Perinjanam (Code: 1500)</p>
+                                <p><strong>Account Number:</strong> 500201010002160</p>
+                                <p><strong>IFSC Code:</strong> KSBK0000502</p>
+                                <p><strong>Branch:</strong> Perinjanam</p>
                             </div>
                         </div>
                     </div>
@@ -486,11 +572,6 @@
                                 <div class="upi-text-info">
                                     <div class="upi-icon"><i class="fa-brands fa-google-pay"></i></div>
                                     <p class="gpay-number"><strong>GPay Number:</strong> +91 95 786 313 01</p>
-                                    <a href="upi://pay?pa=9578631301@okaxis&pn=Jamia%20Mahmoodiyya&cu=INR"
-                                        class="btn btn-primary btn-sm mobile-only-pay"
-                                        style="margin-top: 10px; font-size: 0.8rem; padding: 8px 15px;">
-                                        <i class="fa-solid fa-mobile-screen"></i> Pay via UPI App
-                                    </a>
                                 </div>
                             </div>
                         </div>
