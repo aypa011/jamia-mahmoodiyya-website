@@ -19,15 +19,64 @@
 
 <body id="top">
     <header class="main-head glass-header">
+        <section class="welcome-icons-head">
+            <div class="welcome-icons-div-head container">
+                <div class="welcome">
+                    <div class="welcome-text">
+                        <span data-i18n="welcome-msg">Welcome to Jamia Mahmoodiyya</span>
+                    </div>
+                </div>
+
+                <div class="lang-switcher-container" style="display: flex; align-items: center; gap: 15px;">
+                    <div class="lang-btn" id="lang-btn">
+                        <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i
+                            class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <div class="lang-dropdown glass-menu" id="lang-dropdown">
+                        <a href="#" class="lang-option" data-lang="en">English</a>
+                        <a href="#" class="lang-option" data-lang="ml">മലയാളം</a>
+                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <div class="icons-social-media">
+                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
+                            aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/+919578631301" target="_blank" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <nav class="navi container">
             <div class="nav-content">
                 <div class="nav-img">
                     <a href="index.html">
-                        <img src="Images\annasr-bg.png" alt="Jamia Mahmoodiyya Logo">
+                        <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo">
                     </a>
                 </div>
-                <div class="nav-btn">
-                     <a href="index.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-arrow-left"></i> Home</a>
+
+                <div class="nav-link">
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
+                        <li><a href="index.html#our-institutions" data-i18n="nav-institutions">Institutions</a></li>
+                        <li><a href="index.html#About-us" data-i18n="nav-about">About Us</a></li>
+                        <li><a href="index.html#donate" data-i18n="nav-donate">Donate</a></li>
+                        <li><a href="gallery.html" data-i18n="nav-gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </nav>
@@ -47,9 +96,25 @@
 
     <footer class="site-footer">
         <div class="footerContainer container">
-            <div class="footerBottom" style="border-top: none; padding-top: 0;">
-                <p>Copyright &copy; 2026 Jamia Mahmoodiyya | All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo" class="footer-logo">
+                    <p>Fostering Excellence in Education & Spirituality.</p>
+                </div>
+
+                <div class="footerNav">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy; 2026 Jamia Mahmoodiyya | All rights reserved.</p>
         </div>
     </footer>
 

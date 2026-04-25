@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadDynamicData = async () => {
         const marqueeTrack = document.querySelector('.marquee-track');
         const facultyList = document.getElementById('faculty-list');
-        const calendarTrack = document.getElementById('calendar-track');
+
 
         // 10.1 Load Data (Notices & Live Status)
         fetch('data.json')
@@ -238,73 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadDynamicData();
 
-    // 11. Search Functionality
-    const searchBtn = document.createElement('div');
-    searchBtn.className = 'search-trigger';
-    searchBtn.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
-    searchBtn.style.cssText = 'color:white; cursor:pointer; font-size: 1.1rem; margin-right: 15px;';
-    
-    const langContainer = document.querySelector('.lang-switcher-container');
-    if (langContainer) {
-        langContainer.prepend(searchBtn);
-    }
 
-    const searchOverlay = document.createElement('div');
-    searchOverlay.className = 'search-overlay glass-menu';
-    searchOverlay.innerHTML = `
-        <div class="search-container container">
-            <input type="text" id="global-search" placeholder="Search institutions, events, or pages..." autocomplete="off">
-            <div id="search-results"></div>
-            <button class="close-search"><i class="fa-solid fa-times"></i></button>
-        </div>
-    `;
-    document.body.appendChild(searchOverlay);
-
-    searchBtn.addEventListener('click', () => {
-        searchOverlay.classList.add('active');
-        document.getElementById('global-search').focus();
-    });
-
-    searchOverlay.querySelector('.close-search').addEventListener('click', () => {
-        searchOverlay.classList.remove('active');
-    });
-
-    const searchInput = document.getElementById('global-search');
-    const resultsContainer = document.getElementById('search-results');
-
-    searchInput.addEventListener('input', async (e) => {
-        const query = e.target.value.toLowerCase();
-        if (query.length < 2) {
-            resultsContainer.innerHTML = '';
-            return;
-        }
-
-        try {
-            const response = await fetch('data.json');
-            const data = await response.json();
-            
-            const results = data.institutions.filter(inst => 
-                inst.name.toLowerCase().includes(query) || 
-                inst.description.toLowerCase().includes(query)
-            );
-
-            if (results.length > 0) {
-                resultsContainer.innerHTML = results.map(inst => `
-                    <a href="institutions.html?id=${inst.id}" class="search-result-item">
-                        <img src="${inst.image}" alt="${inst.name}">
-                        <div>
-                            <h4>${inst.name}</h4>
-                            <p>${inst.description.substring(0, 60)}...</p>
-                        </div>
-                    </a>
-                `).join('');
-            } else {
-                resultsContainer.innerHTML = '<p class="no-results">No matches found.</p>';
-            }
-        } catch (err) {
-            console.error('Search error:', err);
-        }
-    });
 
 
 

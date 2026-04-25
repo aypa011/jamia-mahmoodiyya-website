@@ -6,7 +6,7 @@ const translations = {
         'nav-about': 'About Us',
         'nav-donate': 'Donate',
         'nav-gallery': 'Gallery',
-        'nav-events': 'Events',
+
         'hero-title': 'Shaping Tomorrow\'s Leaders',
         'hero-subtitle': 'An Islamic Based Institution Fostering Excellence in Education & Spirituality',
         'btn-discover': 'Discover More',
@@ -46,7 +46,7 @@ const translations = {
         'nav-about': 'ഞങ്ങളെക്കുറിച്ച് (About)',
         'nav-donate': 'സംഭാവന (Donate)',
         'nav-gallery': 'ഗാലറി (Gallery)',
-        'nav-events': 'പരിപാടികൾ (Events)',
+
         'hero-title': 'നാളെയുടെ നേതാക്കളെ വാർത്തെടുക്കുന്നു',
         'hero-subtitle': 'മികച്ച വിദ്യാഭ്യാസവും ആത്മീയതയും നൽകുന്ന ഒരു ഇസ്ലാമിക സ്ഥാപനം',
         'btn-discover': 'കൂടുതൽ അറിയുക',
@@ -86,7 +86,7 @@ const translations = {
         'nav-about': 'معلومات عنا',
         'nav-donate': 'تبرع',
         'nav-gallery': 'معرض الصور',
-        'nav-events': 'الأحداث',
+
         'hero-title': 'صياغة قادة الغد',
         'hero-subtitle': 'مؤسسة إسلامية تعزز التميز في التعليم والروحانية',
         'btn-discover': 'اكتشف المزيد',
