@@ -228,13 +228,36 @@
             "studentCount": 250
         }
     ],
-    "gallery_categories": [
-        "All",
-        "Campus",
-        "Events",
-        "Sports",
-        "Academic",
-        "Hifz",
-        "Girls School"
+    "gallery": [
+        {
+            "type": "photo",
+            "title": "Main Campus Entrance",
+            "thumb": "Images/annasr.jpg",
+            "full": "Images/annasr.jpg"
+        },
+        {
+            "type": "photo",
+            "title": "Hifz Graduation Ceremony",
+            "thumb": "Images/zawiyathul_quran.png",
+            "full": "Images/zawiyathul_quran.png"
+        },
+        {
+            "type": "video",
+            "title": "Institutional Documentary",
+            "thumb": "Images/edu_village.png",
+            "youtubeId": "your-video-id-1"
+        },
+        {
+            "type": "photo",
+            "title": "Smart Seed Preschool Playground",
+            "thumb": "Images/smart_seed.png",
+            "full": "Images/smart_seed.png"
+        },
+        {
+            "type": "video",
+            "title": "Annual Sports Day Highlights",
+            "thumb": "Images/olive_garden.png",
+            "youtubeId": "your-video-id-2"
+        }
     ]
 }

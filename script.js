@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Jamia Mahmoodiyya - Main Script File
  */
 
@@ -142,35 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     counters.forEach(counter => counterObserver.observe(counter));
 
-    // 6. Theme Toggle (Dark Mode)
-    const themeBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    const updateThemeIcon = (isDark) => {
-        if (!themeBtn) return;
-        themeBtn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-    };
-
-    const savedTheme = localStorage.getItem('jamia-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        body.classList.add('dark-theme');
-        updateThemeIcon(true);
-    }
-
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');
-            const isDark = body.classList.contains('dark-theme');
-            localStorage.setItem('jamia-theme', isDark ? 'dark' : 'light');
-
-            themeBtn.style.transform = 'scale(0.8) rotate(90deg)';
-            setTimeout(() => {
-                updateThemeIcon(isDark);
-                themeBtn.style.transform = 'scale(1) rotate(0deg)';
-            }, 150);
-        });
-    }
 
     // 7. Page Transition on Links
     document.querySelectorAll('a').forEach(anchor => {
@@ -262,39 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }).catch(e => console.warn('Faculty load failed:', e));
 
-        // 10.3 Load Event Calendar (from events.json)
-        fetch('events.json')
-            .then(res => res.json())
-            .then(eventData => {
-                if (calendarTrack && eventData) {
-                    calendarTrack.innerHTML = eventData.map(event => {
-                        const dateObj = new Date(event.date);
-                        const day = dateObj.getDate();
-                        const month = dateObj.toLocaleString('default', { month: 'short' });
-                        return `
-                            <div class="calendar-card reveal">
-                                <div class="cal-date">
-                                    <span class="cal-day">${day}</span>
-                                    <span class="cal-month">${month}</span>
-                                </div>
-                                <div class="cal-info">
-                                    <h3>${event.title}</h3>
-                                    <div class="cal-meta">
-                                        <span><i class="fa-regular fa-clock"></i> ${event.time}</span>
-                                        <span><i class="fa-solid fa-location-dot"></i> ${event.location}</span>
-                                    </div>
-                                    <span class="cal-type">${event.type}</span>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                    
-                    calendarTrack.querySelectorAll('.reveal').forEach(el => {
-                        revealObserver.observe(el);
-                        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
-                    });
-                }
-            }).catch(e => console.warn('Events load failed:', e));
+
     };
 
     loadDynamicData();
@@ -367,172 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 12. Interactive Map Hotspots
-    const hotspots = document.querySelectorAll('.hotspot');
-    const infoContent = document.getElementById('map-info-content');
 
-    const updateMapInfo = (spot) => {
-        const title = spot.getAttribute('data-title');
-        const desc = spot.getAttribute('data-desc');
-        
-        if (infoContent) {
-            // Remove class to restart animation
-            infoContent.classList.remove('reveal');
-            
-            infoContent.innerHTML = `
-                <h3>${title}</h3>
-                <p>${desc}</p>
-            `;
-            
-            // Force reflow for animation
-            void infoContent.offsetWidth;
-            infoContent.classList.add('reveal');
-        }
-    };
-
-    hotspots.forEach(spot => {
-        // Desktop Hover
-        spot.addEventListener('mouseenter', () => updateMapInfo(spot));
-        
-        // Mobile Tap / Interaction
-        spot.addEventListener('click', (e) => {
-            e.stopPropagation();
-            updateMapInfo(spot);
-            
-            // Highlight the selected spot
-            hotspots.forEach(s => s.classList.remove('active-spot'));
-            spot.classList.add('active-spot');
-        });
-    });
-
-    // Reset when clicking outside hotspots
-    document.addEventListener('click', (e) => {
-        // Future map reset logic can go here
-    });
-
-
-
-    // 13. Voice Activated Navigation
-    const voiceBtn = document.getElementById('voice-nav-btn');
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    if (voiceBtn && SpeechRecognition) {
-        const recognition = new SpeechRecognition();
-        recognition.continuous = false;
-        recognition.lang = 'en-US';
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
-
-        const voiceOverlay = document.createElement('div');
-        voiceOverlay.className = 'voice-overlay';
-        voiceOverlay.innerHTML = 
-            <div class="voice-status">Listening...</div>
-            <div class="voice-transcript">"Try saying 'Go to Admissions' or 'Show Gallery'"</div>
-            <button class="btn btn-secondary" style="margin-top: 40px;" id="close-voice">Cancel</button>
-        ;
-        document.body.appendChild(voiceOverlay);
-
-        const statusText = voiceOverlay.querySelector('.voice-status');
-        const transcriptText = voiceOverlay.querySelector('.voice-transcript');
-
-        voiceBtn.addEventListener('click', () => {
-            voiceOverlay.classList.add('active');
-            voiceBtn.classList.add('listening');
-            recognition.start();
-        });
-
-        document.getElementById('close-voice').addEventListener('click', () => {
-            recognition.stop();
-            voiceOverlay.classList.remove('active');
-            voiceBtn.classList.remove('listening');
-        });
-
-        recognition.onresult = (event) => {
-            const command = event.results[0][0].transcript.toLowerCase();
-            transcriptText.innerText = '"' + command + '"';
-            statusText.innerText = "Processing...";
-
-            setTimeout(() => {
-                if (command.includes('home')) window.location.href = 'index.html';
-                else if (command.includes('admission')) window.location.href = 'admissions.html';
-                else if (command.includes('gallery') || command.includes('photo')) window.location.href = 'photogallery.html';
-                else if (command.includes('video')) window.location.href = 'videogallery.html';
-                else if (command.includes('event')) window.location.href = 'events.html';
-                else if (command.includes('contact')) window.location.href = 'index.html#contact';
-                else if (command.includes('about')) window.location.href = 'index.html#About-us';
-                else if (command.includes('donate')) window.location.href = 'index.html#donate';
-                else if (command.includes('dark') || command.includes('theme')) themeBtn.click();
-                else {
-                    statusText.innerText = "Command not recognized";
-                    setTimeout(() => {
-                        voiceOverlay.classList.remove('active');
-                        voiceBtn.classList.remove('listening');
-                    }, 1500);
-                }
-            }, 800);
-        };
-
-        recognition.onspeechend = () => {
-            recognition.stop();
-        };
-
-        recognition.onerror = (event) => {
-            statusText.innerText = "Error: " + event.error;
-            setTimeout(() => {
-                voiceOverlay.classList.remove('active');
-                voiceBtn.classList.remove('listening');
-            }, 2000);
-        };
-    }
-
-    // 14. Global Guestbook Map Simulation
-    const guestMap = document.getElementById('guestbook-map');
-    const addPinBtn = document.getElementById('add-pin-btn');
-
-    if (guestMap) {
-        const createPin = (x, y, name, msg) => {
-            const pin = document.createElement('div');
-            pin.className = 'guestbook-pin';
-            pin.style.left = x + '%';
-            pin.style.top = y + '%';
-            pin.innerHTML = \<div class="pin-tooltip"><strong>\</strong><br>\</div>\;
-            guestMap.appendChild(pin);
-        };
-
-        // Pre-load some pins
-        const demoPins = [
-            { x: 75, y: 40, name: "Ahmed, UAE", msg: "A beautiful mission. Support from Dubai!" },
-            { x: 80, y: 65, name: "Ibrahim, Kerala", msg: "Proud to be an alumnus of this institution." },
-            { x: 30, y: 35, name: "Sarah, UK", msg: "Excellence in every step. Ma Sha Allah." },
-            { x: 50, y: 70, name: "Yusuf, S. Africa", msg: "Supporting from Cape Town." }
-        ];
-
-        demoPins.forEach(p => createPin(p.x, p.y, p.name, p.msg));
-
-        if (addPinBtn) {
-            addPinBtn.addEventListener('click', () => {
-                const name = prompt("Enter your name and location (e.g. Ali, Qatar):");
-                if (name) {
-                    const msg = prompt("Enter a short message of support:");
-                    if (msg) {
-                        // Random location for demo
-                        const x = Math.random() * 80 + 10;
-                        const y = Math.random() * 60 + 20;
-                        createPin(x, y, name, msg);
-                        alert("Thank you for your support! Your pin has been added.");
-                    }
-                }
-            });
-        }
-    }
-
-    // 15. Digital Library Preview
-    const previewBtns = document.querySelectorAll('.preview-btn');
-    previewBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const bookTitle = e.target.closest('.book-card').querySelector('h3').innerText;
-            alert("Opening 3D Digital Preview for: " + bookTitle + "\n\n(In production, this would open a high-end flipbook viewer).");
-        });
-    });
 
 });

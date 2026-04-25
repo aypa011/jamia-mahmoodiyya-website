@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery - Jamia Mahmoodiyya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/annasr.jpg">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo" class="splash-logo">
+        <div class="splash-loader"></div>
+    </div>
+
+    <header class="main-head glass-header">
+        <nav class="navi container">
+            <div class="nav-content">
+                <div class="nav-img">
+                    <a href="index.html"><img src="Images/annasr-bg.png" alt="Jamia Logo"></a>
+                </div>
+                <div class="nav-link">
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
+                        <li><a href="gallery.html" class="active" data-i18n="nav-gallery">Gallery</a></li>
+                        <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+        <section class="sub-page-hero">
+            <div class="container reveal">
+                <h1 data-i18n="nav-gallery">Gallery</h1>
+                <p>Capturing the spiritual and academic journey of Jamia Mahmoodiyya.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section section-padding">
+            <div class="container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="photo">Photos</button>
+                    <button class="filter-btn" data-filter="video">Videos</button>
+                </div>
+
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Items loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <div id="lightbox-video-container"></div>
+        </div>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footerContainer container">
+            <div class="footerBottom">
+                <p>&copy; 2026 Jamia Mahmoodiyya | All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="gallery.js" defer></script>
+</body>
+</html>

@@ -9,9 +9,7 @@
     <link rel="icon" type="image/x-icon" href="Images/annasr.jpg">
     <title>Jamia Mahmoodiyya - Official Website</title>
 
-    <!-- Pannellum 360 Viewer -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
     <!-- SEO & Open Graph Meta Tags -->
     <meta name="description"
         content="Jamia Mahmoodiyya is an Islamic Based institution fostering excellence in Education & Spirituality, founded by Usthad Nasrudheen Darimi.">
@@ -63,9 +61,7 @@
                 </div>
 
                 <div class="lang-switcher-container" style="display: flex; align-items: center; gap: 15px;">
-                    <button id="theme-toggle" aria-label="Toggle Dark Mode"
-                        style="background:transparent; border:none; color:white; cursor:pointer; font-size: 1.1rem; transition: transform 0.2s;"><i
-                            class="fa-solid fa-moon"></i></button>
+
                     <div class="lang-btn" id="lang-btn">
                         <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i
                             class="fa-solid fa-angle-down"></i>
@@ -108,28 +104,14 @@
                         <li><a href="index.html#our-institutions" data-i18n="nav-institutions">Institutions</a></li>
                         <li><a href="index.html#About-us" data-i18n="nav-about">About Us</a></li>
                         <li><a href="#donate" data-i18n="nav-donate">Donate</a></li>
-                        <li class="media-hover"><a href="#" data-i18n="nav-media">Media <i
-                                    class="fa-solid fa-angle-down"></i></a>
-                            <div class="sub-menu-media glass-menu">
-                                <ul>
-                                    <li><a href="events.html">Events</a></li>
-                                    <li><a href="photogallery.html">Photo Gallery</a></li>
-                                    <li><a href="videogallery.html">Video Gallery</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        <li><a href="gallery.html" data-i18n="nav-gallery">Gallery</a></li>
+                        <li><a href="events.html" data-i18n="nav-events">Events</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
                     <i class="fa-solid fa-bars"></i>
-                </div>
-
-                <!-- Voice Navigation Trigger -->
-                <div id="voice-nav-btn" title="Voice Navigation" class="voice-trigger">
-                    <i class="fa-solid fa-microphone"></i>
-                    <span class="voice-tip">Try "Go to Admissions"</span>
                 </div>
             </div>
         </nav>
@@ -139,16 +121,15 @@
         <section class="hero-section" id="home">
             <div class="hero-overlay"></div>
             <!-- Decorative floating orbs -->
-            <div class="hero-orb hero-orb-1"></div>
-            <div class="hero-orb hero-orb-2"></div>
+
 
             <div class="hero-content container reveal">
                 <div class="hero-badge">
                     <i class="fa-solid fa-star" style="color:var(--accent-color);"></i>
                     Est. 1986 — 40 Years of Excellence
                 </div>
-                <h1 class="hero-title" data-i18n="hero-title">Shaping Tomorrow's
-                    <span class="hero-title-accent">Leaders</span>
+                <h1 class="hero-title" data-i18n="hero-title">Enculturing the
+                    <span class="hero-title-accent">Social</span>
                 </h1>
                 <p class="hero-subtitle" data-i18n="hero-subtitle">An Islamic Based Institution Fostering Excellence in
                     Education &amp; Spirituality</p>
@@ -355,187 +336,15 @@
             </div>
         </section>
 
-        <!-- Milestone Timeline (Our Journey) -->
-        <section id="our-journey" class="timeline-section section-padding bg-surface">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2 data-i18n="timeline-title">Our Journey</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc" data-i18n="timeline-desc">Over four decades of excellence in education and
-                        spirituality.</p>
-                </div>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">1986</span>
-                            <h3 data-i18n="milestone-1-title">Foundation</h3>
-                            <p data-i18n="milestone-1-desc">Jamia Mahmoodiyya was founded by Usthad Nasrudheen
-                                Darimi with a vision for holistic Islamic education.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">1995</span>
-                            <h3 data-i18n="milestone-2-title">Expansion</h3>
-                            <p data-i18n="milestone-2-desc">Opening of the first dedicated hifz college campus to
-                                accommodate growing numbers of students.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">2010</span>
-                            <h3 data-i18n="milestone-3-title">English School</h3>
-                            <p data-i18n="milestone-3-desc">Establishment of Mahmoodiyya English School (CBSE) to
-                                integrate secular and spiritual excellence.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-card">
-                            <span class="timeline-year">2024</span>
-                            <h3 data-i18n="milestone-4-title">Modernization</h3>
-                            <p data-i18n="milestone-4-desc">Launch of Edu Village and Smart Seed Premium Preschool,
-                                redefining modern Islamic learning environments.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
 
-        <!-- Virtual Tour Section (360° View) -->
-        <section class="virtual-tour-section section-padding bg-surface" id="virtual-tour">
-            <div class="container">
-                <div class="section-header">
-                    <h2>360° Virtual Tour</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">Take a virtual walk through our campus and experience the environment of
-                        Jamia Mahmoodiyya.</p>
-                </div>
 
-                <div class="tour-wrapper glass-card">
-                    <div id="panorama" style="width: 100%; height: 750px; border-radius: 15px;"></div>
-                </div>
 
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        // Initialize Pannellum when the section is reached or immediately
-                        // For demonstration, we use the 'jm bg.jpg' as the 360 image
-                        // In a real scenario, this would be an equirectangular 360 image
-                        pannellum.viewer('panorama', {
-                            "type": "equirectangular",
-                            "panorama": "Images/mahmoodiyya new building.jpg",
-                            "autoLoad": true,
-                            "autoRotate": -2,
-                            "title": "Jamia Mahmoodiyya - Main Building",
-                            "author": "Jamia Media"
-                        });
-                    });
-                </script>
-            </div>
-        </section>
 
-        <!-- Digital Library Preview Section -->
-        <section id="library" class="section-padding">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2 data-i18n="library-title">Digital Library</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">Explore our curated collection of spiritual and academic publications.</p>
-                </div>
 
-                <div class="library-grid">
-                    <div class="book-card glass-card reveal" data-pdf="sample-book.pdf">
-                        <div class="book-container">
-                            <div class="book-3d">
-                                <img src="Images/book-cover-1.jpg" alt="Book 1" class="book-cover" onerror="this.src='https://placehold.co/400x600/047857/ffffff?text=Islamic+Philosophy'">
-                                <div class="book-side"></div>
-                            </div>
-                        </div>
-                        <div class="book-info">
-                            <h3>Islamic Philosophy</h3>
-                            <p>An introduction to classical thought.</p>
-                            <button class="btn btn-outline preview-btn">Preview Book</button>
-                        </div>
-                    </div>
 
-                    <div class="book-card glass-card reveal" data-pdf="sample-book.pdf">
-                        <div class="book-container">
-                            <div class="book-3d">
-                                <img src="Images/book-cover-2.jpg" alt="Book 2" class="book-cover" onerror="this.src='https://placehold.co/400x600/10b981/ffffff?text=Modern+Ethics'">
-                                <div class="book-side"></div>
-                            </div>
-                        </div>
-                        <div class="book-info">
-                            <h3>Modern Ethics</h3>
-                            <p>Spiritual guidance for the digital age.</p>
-                            <button class="btn btn-outline preview-btn">Preview Book</button>
-                        </div>
-                    </div>
 
-                    <div class="book-card glass-card reveal" data-pdf="sample-book.pdf">
-                        <div class="book-container">
-                            <div class="book-3d">
-                                <img src="Images/book-cover-3.jpg" alt="Book 3" class="book-cover" onerror="this.src='https://placehold.co/400x600/064e3b/ffffff?text=Quranic+Insights'">
-                                <div class="book-side"></div>
-                            </div>
-                        </div>
-                        <div class="book-info">
-                            <h3>Quranic Insights</h3>
-                            <p>Exploring the depths of the Holy Word.</p>
-                            <button class="btn btn-outline preview-btn">Preview Book</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Virtual Guestbook Map Section -->
-        <section id="guestbook" class="section-padding bg-surface">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2>Global Guestbook</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">Join our global community. Pin your location and leave a message of support.</p>
-                </div>
-
-                <div class="guestbook-container glass-card">
-                    <div id="guestbook-map" style="width: 100%; height: 500px; background: #e0e0e0; position: relative;">
-                        <!-- Map implementation will go here -->
-                        <div class="map-placeholder">
-                            <i class="fa-solid fa-earth-americas"></i>
-                            <p>Loading Interactive Map...</p>
-                        </div>
-                    </div>
-                    <div class="guestbook-controls">
-                        <button id="add-pin-btn" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i> Add My Pin</button>
-                        <div id="pin-count">Join 1,240+ supporters worldwide</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dynamic Event Calendar -->
-        <section id="event-calendar" class="section-padding">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2 data-i18n="calendar-title">Event Calendar</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">Mark your dates for upcoming institutional events and programs.</p>
-                </div>
-                <div class="calendar-grid" id="calendar-track">
-                    <!-- Events will be loaded dynamically -->
-                </div>
-            </div>
-        </section>
 
         <section id="donate" class="donate section-padding">
             <div class="container reveal">
