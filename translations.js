@@ -6,6 +6,7 @@ const translations = {
         'nav-about': 'About Us',
         'nav-donate': 'Donate',
         'nav-gallery': 'Gallery',
+        'nav-archive': 'Archive',
 
         'hero-title': 'Shaping Tomorrow\'s Leaders',
         'hero-subtitle': 'An Islamic Based Institution Fostering Excellence in Education & Spirituality',
@@ -22,6 +23,8 @@ const translations = {
         'prayer-asr': 'Asr',
         'prayer-maghrib': 'Maghrib',
         'prayer-isha': 'Isha',
+        'archive-title': 'Digital Archive',
+        'archive-subtitle': 'Explore our latest magazines, journals, and reports',
         'timeline-title': 'Our Journey',
         'timeline-desc': 'Over four decades of excellence in education and spirituality.',
         'milestone-1-title': 'Foundation',
@@ -46,6 +49,9 @@ const translations = {
         'nav-about': 'ഞങ്ങളെക്കുറിച്ച് (About)',
         'nav-donate': 'സംഭാവന (Donate)',
         'nav-gallery': 'ഗാലറി (Gallery)',
+        'nav-archive': 'ആർക്കൈവ്',
+        'archive-title': 'ഡിജിറ്റل ആർക്കൈവ്',
+        'archive-subtitle': 'ഞങ്ങളുടെ ഏറ്റവും പുതിയ മാഗസിനുകളും റിപ്പോർട്ടുകളും ഇവിടെ കാണാം',
 
         'hero-title': 'നാളെയുടെ നേതാക്കളെ വാർത്തെടുക്കുന്നു',
         'hero-subtitle': 'മികച്ച വിദ്യാഭ്യാസവും ആത്മീയതയും നൽകുന്ന ഒരു ഇസ്ലാമിക സ്ഥാപനം',
@@ -86,6 +92,9 @@ const translations = {
         'nav-about': 'معلومات عنا',
         'nav-donate': 'تبرع',
         'nav-gallery': 'معرض الصور',
+        'nav-archive': 'الأرشيف',
+        'archive-title': 'الأرشيف الرقمي',
+        'archive-subtitle': 'استكشف أحدث المجلات والتقارير لدينا',
 
         'hero-title': 'صياغة قادة الغد',
         'hero-subtitle': 'مؤسسة إسلامية تعزز التميز في التعليم والروحانية',
