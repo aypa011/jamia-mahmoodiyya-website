@@ -48,6 +48,7 @@
         <div class="splash-loader"></div>
     </div>
 
+
     <!-- Institutional AI Chatbot -->
     <div class="chatbot-container">
         <div class="chatbot-window" id="chatbot-window">
@@ -60,7 +61,7 @@
             </div>
             <div class="chat-body" id="chat-body">
                 <div class="chat-msg bot">
-                    Assalamu Alaikum! I am the Mahmoodiyya AI Assistant. How can I help you today?
+                    Ya Habeebis! I am the Mahmoodiyya AI Assistant. How can I help you today?
                 </div>
             </div>
             <div class="quick-replies" id="quick-replies">
@@ -82,479 +83,506 @@
 
     <!-- Quick Connect Bar -->
     <div class="quick-connect-bar">
-        <a href="https://wa.me/+919578631301" class="quick-connect-item whatsapp" target="_blank" title="Chat on WhatsApp">
+        <a href="https://wa.me/+919578631301" class="quick-connect-item whatsapp" target="_blank"
+            title="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
         <a href="tel:+919578631301" class="quick-connect-item call" title="Call Us">
             <i class="fa-solid fa-phone"></i>
         </a>
-    </div> <!-- Scrolling Notice Bar -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
-    </div>
+        <!-- Scrolling Notice Bar -->
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+        </div>
 
-    <header class="main-head glass-header">
-        <section class="welcome-icons-head">
-            <div class="welcome-icons-div-head container">
-                <div class="welcome">
-                    <div class="welcome-text">
-                        <span data-i18n="welcome-msg">Welcome to Jamia Mahmoodiyya</span>
-                    </div>
-                </div>
-
-                <div class="lang-switcher-container" style="display: flex; align-items: center; gap: 15px;">
-                    <div class="lang-btn" id="lang-btn">
-                        <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i
-                            class="fa-solid fa-angle-down"></i>
-                    </div>
-                    <div class="lang-dropdown glass-menu" id="lang-dropdown">
-                        <a href="#" class="lang-option" data-lang="en">English</a>
-                        <a href="#" class="lang-option" data-lang="ml">മലയാളം</a>
-                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
-                    </div>
-                </div>
-
-                <div class="icons">
-                    <div class="icons-social-media">
-                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
-                            aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank" aria-label="Instagram"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
-                                class="fa-brands fa-youtube"></i></a>
-                        <a href="https://wa.me/+919578631301" target="_blank" aria-label="WhatsApp"><i
-                                class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <nav class="navi container">
-            <div class="nav-content">
-                <div class="nav-img">
-                    <a href="index.html">
-                        <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo">
-                    </a>
-                </div>
-
-                <div class="nav-link">
-                    <ul>
-                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
-                        <li><a href="#about-us" data-i18n="nav-about">About Us</a></li>
-                        <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
-                        <li><a href="gallery.html" data-i18n="nav-gallery">Gallery</a></li>
-                        <li><a href="#donate" data-i18n="nav-donate">Donate</a></li>
-                        <li><a href="#contact-us" data-i18n="nav-contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero-section" id="home">
-            <div class="hero-overlay"></div>
-            <!-- Decorative floating orbs -->
-
-
-            <div class="hero-content container reveal">
-                <div class="hero-badge">
-                    <i class="fa-solid fa-star" style="color:var(--accent-color);"></i>
-                    Est. 1986 — 40 Years of Excellence
-                </div>
-                <h1 class="hero-title" data-i18n="hero-title">Enculturing the
-                    <span class="hero-title-accent">Social</span>
-                </h1>
-                <p class="hero-subtitle" data-i18n="hero-subtitle">An Islamic Based Institution Fostering Excellence in
-                    Education &amp; Spirituality</p>
-                <div class="hero-buttons">
-                    <a href="#About-us" class="btn btn-primary" data-i18n="btn-discover">
-                        <i class="fa-solid fa-compass"></i> Discover More
-                    </a>
-                    <a href="#our-institutions" class="btn btn-secondary" data-i18n="btn-institutions">
-                        <i class="fa-solid fa-building-columns"></i> Our Institutions
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Notice Board Section -->
-        <section class="notice-board-section">
-            <div class="container relative">
-                <div class="notice-board-container">
-                    <div class="notice-header">
-                        <h3><i class="fa-solid fa-bullhorn"></i> Updates</h3>
-                    </div>
-                    <div class="notice-content">
-                        <div class="marquee-track">
-                            <span class="notice-item"><span class="badge new-badge">NEW</span> Admissions now open for
-                                Hifz College and Edu Village 2026-2027! Apply online via the Admissions portal.</span>
-                            <span class="notice-item"><span class="badge new-badge">REMINDER</span> Last date for
-                                submitting
-                                Hifz College applications is March 31, 2026.</span>
-                            <span class="notice-item">Upcoming Event: Annual Islamic Conference to be held next month.
-                                Detailed schedule will be published soon.</span>
-                            <span class="notice-item"><span class="badge new-badge">UPDATE</span> Important
-                                parent-teacher meeting for CBSE students on the upcoming Saturday.</span>
-                            <span class="notice-item">Result published for Al Madrasathul Mahmoodiyya Half-yearly
-                                examinations. Please collect from the office.</span>
-                            <span class="notice-item">New hostel facilities now available for Da'wa College students.
-                                Contact the administration for details.</span>
-                            <span class="notice-item">Congratulations to the successful candidates of the recent
-                                scholarship exams!</span>
-                            <span class="notice-item"><span class="badge new-badge">NOTICE</span> Special weekend
-                                Islamic classes starting
-                                for professionals next month.</span>
-                            <span class="notice-item">Donations mapping improved: Seamless UPI payment methods are now
-                                live and verified.</span>
-                            <span class="notice-item">Jamia Mahmoodiyya Women's College announces new diploma courses in
-                                Islamic Finance.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="institution section-padding" id="our-institutions">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2>Our Institutions</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">Explore our diverse educational initiatives dedicated to building a brighter
-                        future.</p>
-                </div>
-
-                <div class="institution-gallery">
-                    <a href="institutions.html?id=annasr" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/annasr.jpg" alt="Annasr Global Academy - Da'wa college" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Annasr Global Academy - Da'wa College</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=zawiya" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/zawiyathul_quran.png" alt="Zawiyathul Qur'an" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Zawiyathul Qur'an - Hifz College</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=eduvillage" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/edu_village.png" alt="Edu Village" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Edu Village - HS boys campus</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=womens" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/womens_college.png" alt="Women's College" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Women's College (+1 to UG)</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=olive_garden" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/olive_garden.png" alt="Olive Garden" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Olive Garden HS Girls School</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=madrasa" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/madrasa.png" alt="Al Madrasathul Mahmoodiyya" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Al Madrasathul Mahmoodiyya</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=cbse" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/logo eng schl.jpg" alt="Mahmoodiyya English School" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Mahmoodiyya English School - CBSE</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=thibyan" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/annasr.jpg" alt="Thibyan Pre School" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Thibyan Pre School</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=smart_seed" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/smart_seed.png" alt="Smart Seed Premium Pre-school" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Smart Seed Premium Preschool</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=ibes" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/annasr.jpg" alt="IBES" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">IBES</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                    <a href="institutions.html?id=masajid" class="inst-item glass-card">
-                        <div class="inst-img-wrapper">
-                            <img src="Images/masajid.png" alt="Masajid" loading="lazy">
-                        </div>
-                        <div class="inst-info">
-                            <h3 class="inst-name">Masajid</h3>
-                            <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-
-        <section id="About-us" class="about section-padding">
-            <div class="container reveal">
-                <div class="about-content grid-2-col">
-                    <div class="about-text-content">
-                        <div class="section-header align-left">
-                            <h2>About Us</h2>
-                            <div class="divider align-left"></div>
-                        </div>
-                        <p class="abt-lead">Jamia Mahmoodiyya is an Islamic Based institution founded by Usthad
-                            Nasrudheen Darimi.</p>
-                        <p class="abt">It consists of various Educational institutions including Da'wa College, Hifz
-                            College, Women's College, CBSE School, Madrasa and Masajid.</p>
-                        <p class="abt">The institution has been serving the community for about forty years. We request
-                            you to help our institutions as much as you can and let's together develop tomorrow's
-                            leaders.</p>
-                        <a href="#contact" class="btn btn-outline">Contact Us</a>
-                    </div>
-                    <div class="about-image-content">
-                        <div class="image-stack">
-                            <img src="Images/darimi-ustad.png" alt="Usthad Nasrudheen Darimi"
-                                class="about-img main-img shadow-lg" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Leadership Section -->
-        <section id="leadership" class="leadership section-padding">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2 data-i18n="leadership-title">Our Leadership</h2>
-                    <div class="divider"></div>
-                </div>
-                <div class="leadership-grid" id="faculty-list">
-                    <!-- Leadership will be loaded dynamically from faculty.json -->
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-        <section id="donate" class="donate section-padding">
-            <div class="container reveal">
-                <div class="section-header center">
-                    <h2>Support Our Mission</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">Your contributions help us sustain and grow our educational initiatives.</p>
-                </div>
-                <div class="donate-grid">
-                    <div class="donate-card glass-card">
-                        <div class="donate-info">
-                            <h3>Bank Transfer</h3>
-                            <p>You can directly transfer your donations to our institutional bank account.</p>
-                            <div class="bank-details">
-                                <p><strong>Bank Name:</strong> Kerala Bank</p>
-                                <p><strong>Account Name:</strong> Jamiya Mahmoodiyya Trust</p>
-                                <p><strong>Account Number:</strong> 500201010002160</p>
-                                <p><strong>IFSC Code:</strong> KSBK0000502</p>
-                                <p><strong>Branch:</strong> Perinjanam</p>
-                            </div>
+        <header class="main-head glass-header">
+            <section class="welcome-icons-head">
+                <div class="welcome-icons-div-head container">
+                    <div class="welcome">
+                        <div class="welcome-text">
+                            <span data-i18n="welcome-msg">Welcome to Jamia Mahmoodiyya</span>
                         </div>
                     </div>
 
-                    <!-- UPI/Google Pay Card -->
-                    <div class="donate-card glass-card">
-                        <div class="donate-info donate-info-centered">
-                            <h3>UPI / Google Pay</h3>
-                            <p>For quick and easy mobile payments, you can scan the QR or use the number below.</p>
-                            <div class="upi-details-clean">
-                                <div class="qr-code-wrapper">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi%3A%2F%2Fpay%3Fpa%3D9578631301%40okaxis%26pn%3DJamia%20Mahmoodiyya%26cu%3DINR"
-                                        alt="UPI QR Code" loading="lazy">
-                                </div>
-                                <div class="upi-text-info">
-                                    <div class="upi-icon"><i class="fa-brands fa-google-pay"></i></div>
-                                    <p class="gpay-number"><strong>GPay Number:</strong> +91 95 786 313 01</p>
-                                </div>
-                            </div>
+                    <div class="lang-switcher-container" style="display: flex; align-items: center; gap: 15px;">
+                        <div class="lang-btn" id="lang-btn">
+                            <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i
+                                class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="lang-dropdown glass-menu" id="lang-dropdown">
+                            <a href="#" class="lang-option" data-lang="en">English</a>
+                            <a href="#" class="lang-option" data-lang="ml">മലയാളം</a>
+                            <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                        </div>
+                    </div>
+
+                    <div class="icons">
+                        <div class="icons-social-media">
+                            <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" target="_blank"
+                                aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/jamia_mahmoodiyya" target="_blank"
+                                aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://youtube.com/@mahmoodiyyamedia" target="_blank" aria-label="YouTube"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="https://wa.me/+919578631301" target="_blank" aria-label="WhatsApp"><i
+                                    class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="contact" class="contact section-padding bg-surface">
-            <div class="container reveal">
-                <div class="section-header">
-                    <h2>Get in Touch</h2>
-                    <div class="divider"></div>
-                    <p class="section-desc">We'd love to hear from you. Reach out to us for any inquiries.</p>
-                </div>
+            <nav class="navi container">
+                <div class="nav-content">
+                    <div class="nav-img">
+                        <a href="index.html">
+                            <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo">
+                        </a>
+                    </div>
 
-                <div class="contact-container glass-card shadow-lg">
-                    <div class="contact-details">
-                        <h3>Contact Information</h3>
-                        <ul class="contact-list">
-                            <li>
-                                <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-                                <div class="info-text">
-                                    <strong>Call Us</strong>
-                                    <span>+91 95 786 313 01<br>+91 98 468 866 25</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon-box whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
-                                <div class="info-text">
-                                    <strong>WhatsApp</strong>
-                                    <span><a href="https://wa.me/+919578631301" target="_blank">+91 95 786 313
-                                            01</a></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon-box email"><i class="fa-solid fa-envelope"></i></div>
-                                <div class="info-text">
-                                    <strong>Email Us</strong>
-                                    <span><a href="mailto:mahamoodiya@gmail.com">mahamoodiya@gmail.com</a></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon-box location"><i class="fa-solid fa-location-dot"></i></div>
-                                <div class="info-text">
-                                    <strong>Visit Us</strong>
-                                    <span>Perinjanam, Thrissur<br>Kerala, 680686</span>
-                                </div>
-                            </li>
+                    <div class="nav-link">
+                        <ul>
+                            <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                            <li><a href="#about-us" data-i18n="nav-about">About Us</a></li>
+                            <li><a href="admissions.html" data-i18n="nav-admissions">Admissions</a></li>
+                            <li><a href="gallery.html" data-i18n="nav-gallery">Gallery</a></li>
+                            <li><a href="#donate" data-i18n="nav-donate">Donate</a></li>
+                            <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="loc map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.376648256478!2d76.15800137451193!3d10.311711467594579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081e195bdaab51%3A0x6294e8a838404e2e!2s8566%2BM6W%2C%201%2C%20Chakkarapadam%20Rd%2C%20Perinjanam%2C%20Kerala%20680686!5e0!3m2!1sen!2sin!4v1732860904368!5m2!1sen!2sin"
-                            title="Jamia Mahmoodiyya Location Map" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Toggle Mobile Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-section" id="home">
+                <div class="hero-overlay"></div>
+
+                <div class="hero-content container reveal">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-star" style="color:var(--accent-color);"></i>
+                        Est. 1986 — 40 Years of Excellence
+                    </div>
+                    <h1 class="hero-title" data-i18n="hero-title">Enculturing the
+                        <span class="hero-title-accent">Social</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero-subtitle">An Islamic Based Institution Fostering Excellence
+                        in
+                        Education &amp; Spirituality</p>
+                    <div class="hero-buttons">
+                        <a href="#About-us" class="btn btn-primary" data-i18n="btn-discover">
+                            <i class="fa-solid fa-compass"></i> Discover More
+                        </a>
+                        <a href="#our-institutions" class="btn btn-secondary" data-i18n="btn-institutions">
+                            <i class="fa-solid fa-building-columns"></i> Our Institutions
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notice Board Section -->
+            <section class="notice-board-section">
+                <div class="container relative">
+                    <div class="notice-board-container">
+                        <div class="notice-header">
+                            <h3><i class="fa-solid fa-bullhorn"></i> Updates</h3>
+                        </div>
+                        <div class="notice-content">
+                            <div class="marquee-track">
+                                <span class="notice-item"><span class="badge new-badge">NEW</span> Admissions now open
+                                    for
+                                    Hifz College and Edu Village 2026-2027! Apply online via the Admissions
+                                    portal.</span>
+                                <span class="notice-item"><span class="badge new-badge">REMINDER</span> Last date for
+                                    submitting
+                                    Hifz College applications is March 31, 2026.</span>
+                                <span class="notice-item">Upcoming Event: Annual Islamic Conference to be held next
+                                    month.
+                                    Detailed schedule will be published soon.</span>
+                                <span class="notice-item"><span class="badge new-badge">UPDATE</span> Important
+                                    parent-teacher meeting for CBSE students on the upcoming Saturday.</span>
+                                <span class="notice-item">Result published for Al Madrasathul Mahmoodiyya Half-yearly
+                                    examinations. Please collect from the office.</span>
+                                <span class="notice-item">New hostel facilities now available for Da'wa College
+                                    students.
+                                    Contact the administration for details.</span>
+                                <span class="notice-item">Congratulations to the successful candidates of the recent
+                                    scholarship exams!</span>
+                                <span class="notice-item"><span class="badge new-badge">NOTICE</span> Special weekend
+                                    Islamic classes starting
+                                    for professionals next month.</span>
+                                <span class="notice-item">Donations mapping improved: Seamless UPI payment methods are
+                                    now
+                                    live and verified.</span>
+                                <span class="notice-item">Jamia Mahmoodiyya Women's College announces new diploma
+                                    courses in
+                                    Islamic Finance.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="institution section-padding" id="our-institutions">
+                <div class="container reveal">
+                    <div class="section-header">
+                        <h2>Our Institutions</h2>
+                        <div class="divider"></div>
+                        <p class="section-desc">Explore our diverse educational initiatives dedicated to building a
+                            brighter
+                            future.</p>
+                    </div>
+
+                    <div class="institution-gallery">
+                        <a href="institutions.html?id=annasr" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/annasr.jpg" alt="Annasr Global Academy - Da'wa college" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Annasr Global Academy</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=zawiya" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/zawiyathul_quran.png" alt="Zawiyathul Qur'an" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Zawiyathul Qur'an</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=eduvillage" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/edu_village.png" alt="Edu Village" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Edu Village</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=womens" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/womens_college.png" alt="Women's College" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Women's College</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=olive_garden" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/olive_garden.png" alt="Olive Garden" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Olive Garden</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=madrasa" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/madrasa.png" alt="Al Madrasathul Mahmoodiyya" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Al Madrasathul Mahmoodiyya</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=cbse" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/logo eng schl.jpg" alt="Mahmoodiyya English School" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Mahmoodiyya English School</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=thibyan" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/annasr.jpg" alt="Thibyan Pre School" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Thibyan Pre School</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=smart_seed" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/smart_seed.png" alt="Smart Seed Premium Pre-school" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Smart Seed Premium Preschool</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=ibes" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/annasr.jpg" alt="IBES" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">IBES</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="institutions.html?id=masajid" class="inst-item glass-card">
+                            <div class="inst-img-wrapper">
+                                <img src="Images/masajid.png" alt="Masajid" loading="lazy">
+                            </div>
+                            <div class="inst-info">
+                                <h3 class="inst-name">Masajid</h3>
+                                <span class="view-details">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="About-us" class="about section-padding">
+                <div class="container reveal">
+                    <div class="about-content grid-2-col">
+                        <div class="about-text-content">
+                            <div class="section-header align-left">
+                                <h2>About Us</h2>
+                                <div class="divider align-left"></div>
+                            </div>
+                            <p class="abt-lead">Jamia Mahmoodiyya is an Islamic Based institution founded by Usthad
+                                Nasrudheen Darimi.</p>
+                            <p class="abt">It consists of various Educational institutions including Da'wa College, Hifz
+                                College, Women's College, CBSE School, Madrasa and Masajid.</p>
+                            <p class="abt">The institution has been serving the community for about forty years. We
+                                request
+                                you to help our institutions as much as you can and let's together develop tomorrow's
+                                leaders.</p>
+                            <a href="#contact" class="btn btn-outline">Contact Us</a>
+                        </div>
+                        <div class="about-image-content">
+                            <div class="image-stack">
+                                <img src="Images/darimi-ustad.png" alt="Usthad Nasrudheen Darimi"
+                                    class="about-img main-img shadow-lg" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leadership Section -->
+            <section id="leadership" class="leadership section-padding">
+                <div class="container reveal">
+                    <div class="section-header">
+                        <h2 data-i18n="leadership-title">Our Leadership</h2>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="leadership-grid" id="faculty-list">
+                        <!-- Leadership will be loaded dynamically from faculty.json -->
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+            <section id="donate" class="donate section-padding">
+                <div class="container reveal">
+                    <div class="section-header center">
+                        <h2>Support Our Mission</h2>
+                        <div class="divider"></div>
+                        <p class="section-desc">Your contributions help us sustain and grow our educational initiatives.
+                        </p>
+                    </div>
+                    <div class="donate-grid">
+                        <div class="donate-card glass-card">
+                            <div class="donate-info">
+                                <h3>Bank Transfer</h3>
+                                <p>You can directly transfer your donations to our institutional bank account.</p>
+                                <div class="bank-details">
+                                    <p><strong>Bank Name:</strong> Kerala Bank</p>
+                                    <p><strong>Account Name:</strong> Jamiya Mahmoodiyya Trust</p>
+                                    <p><strong>Account Number:</strong> 500201010002160</p>
+                                    <p><strong>IFSC Code:</strong> KSBK0000502</p>
+                                    <p><strong>Branch:</strong> Perinjanam</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UPI/Google Pay Card -->
+                        <div class="donate-card glass-card">
+                            <div class="donate-info donate-info-centered">
+                                <h3>UPI / Google Pay</h3>
+                                <p>For quick and easy mobile payments, you can scan the QR or use the number below.</p>
+                                <div class="upi-details-clean">
+                                    <div class="qr-code-wrapper">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi%3A%2F%2Fpay%3Fpa%3D9578631301%40okaxis%26pn%3DJamia%20Mahmoodiyya%26cu%3DINR"
+                                            alt="UPI QR Code" loading="lazy">
+                                    </div>
+                                    <div class="upi-text-info">
+                                        <div class="upi-icon"><i class="fa-brands fa-google-pay"></i></div>
+                                        <p class="gpay-number"><strong>GPay Number:</strong> +91 95 786 313 01</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact section-padding bg-surface">
+                <div class="container reveal">
+                    <div class="section-header">
+                        <h2>Get in Touch</h2>
+                        <div class="divider"></div>
+                        <p class="section-desc">We'd love to hear from you. Reach out to us for any inquiries.</p>
+                    </div>
+
+                    <div class="contact-container glass-card shadow-lg">
+                        <div class="contact-details">
+                            <h3>Contact Information</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                                    <div class="info-text">
+                                        <strong>Call Us</strong>
+                                        <span>+91 95 786 313 01<br>+91 98 468 866 25</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                                    <div class="info-text">
+                                        <strong>WhatsApp</strong>
+                                        <span><a href="https://wa.me/+919578631301" target="_blank">+91 95 786 313
+                                                01</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box email"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="info-text">
+                                        <strong>Email Us</strong>
+                                        <span><a href="mailto:mahamoodiya@gmail.com">mahamoodiya@gmail.com</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box location"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="info-text">
+                                        <strong>Visit Us</strong>
+                                        <span>Perinjanam, Thrissur<br>Kerala, 680686</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="loc map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.376648256478!2d76.15800137451193!3d10.311711467594579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081e195bdaab51%3A0x6294e8a838404e2e!2s8566%2BM6W%2C%201%2C%20Chakkarapadam%20Rd%2C%20Perinjanam%2C%20Kerala%20680686!5e0!3m2!1sen!2sin!4v1732860904368!5m2!1sen!2sin"
+                                title="Jamia Mahmoodiyya Location Map" style="border:0;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Strip -->
+            <section class="stats-strip">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <span class="stat-number counter" data-target="40">0</span><span
+                                class="stat-number">+</span>
+                            <div class="stat-label">Years of Excellence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fa-solid fa-building-columns"></i></div>
+                            <span class="stat-number counter" data-target="9">0</span>
+                            <div class="stat-label">Institutions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                            <span class="stat-number counter" data-target="1000">0</span><span
+                                class="stat-number">+</span>
+                            <div class="stat-label">Students Enrolled</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <span class="stat-number" style="font-size:1.6rem;">Perinjanam</span>
+                            <div class="stat-label">Thrissur, Kerala</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footerContainer container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo" class="footer-logo">
+                        <p>Fostering Excellence in Education & Spirituality.</p>
+                        <div class="socialIcons">
+                            <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" aria-label="Facebook"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/jamia_mahmoodiyya" aria-label="Instagram"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://youtube.com/@mahmoodiyyamedia" aria-label="YouTube"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footerNav">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                            <li><a href="index.html#About-us">About Us</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="index.html#donate">Donate</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Perinjanam, Thrissur, Kerala</p>
+                        <p><i class="fa-solid fa-phone"></i> +91 95 786 313 01</p>
+                        <p><i class="fa-solid fa-envelope"></i> mahamoodiya@gmail.com</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Stats Strip -->
-        <section class="stats-strip">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                        <span class="stat-number counter" data-target="40">0</span><span class="stat-number">+</span>
-                        <div class="stat-label">Years of Excellence</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fa-solid fa-building-columns"></i></div>
-                        <span class="stat-number counter" data-target="9">0</span>
-                        <div class="stat-label">Institutions</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                        <span class="stat-number counter" data-target="1000">0</span><span class="stat-number">+</span>
-                        <div class="stat-label">Students Enrolled</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <span class="stat-number" style="font-size:1.6rem;">Perinjanam</span>
-                        <div class="stat-label">Thrissur, Kerala</div>
-                    </div>
-                </div>
+            <div class="footerBottom">
+                <p>Copyright &copy; <span id="current-year">2026</span> Jamia Mahmoodiyya | All rights reserved.</p>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <footer class="site-footer">
-        <div class="footerContainer container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <img src="Images/annasr-bg.png" alt="Jamia Mahmoodiyya Logo" class="footer-logo">
-                    <p>Fostering Excellence in Education & Spirituality.</p>
-                    <div class="socialIcons">
-                        <a href="https://www.facebook.com/KRNasrudheenDarimi?__tn__=-UC*F" aria-label="Facebook"><i
-                                class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/jamia_mahmoodiyya" aria-label="Instagram"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://youtube.com/@mahmoodiyyamedia" aria-label="YouTube"><i
-                                class="fa-brands fa-youtube"></i></a>
-                    </div>
+        <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Search Our Portal</h2>
+                <button class="close-search" id="close-search"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-body">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="main-search-input" placeholder="What are you looking for? (e.g. Admissions, Faculty, Hifz...)">
                 </div>
-
-                <div class="footerNav">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html" data-i18n="nav-home">Home</a></li>
-                        <li><a href="index.html#About-us">About Us</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="index.html#donate">Donate</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> Perinjanam, Thrissur, Kerala</p>
-                    <p><i class="fa-solid fa-phone"></i> +91 95 786 313 01</p>
-                    <p><i class="fa-solid fa-envelope"></i> mahamoodiya@gmail.com</p>
+                <div class="search-results" id="search-results">
+                    <p class="search-placeholder">Start typing to see results...</p>
                 </div>
             </div>
         </div>
-        <div class="footerBottom">
-            <p>Copyright &copy; <span id="current-year">2026</span> Jamia Mahmoodiyya | All rights reserved.</p>
-        </div>
-    </footer>
-
-
-
-
+    </div>
 
     <!-- Custom Translations Script -->
     <script src="translations.js" defer></script>

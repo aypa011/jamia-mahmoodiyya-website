@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Splash Screen & Initial Transitions (Once per session)
     const splash = document.getElementById('splash-screen');
     const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
-
+ 
     if (splash) {
         if (hasSeenSplash) {
             // Already seen in this session, skip animation
@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 splash.classList.add('fade-out');
                 sessionStorage.setItem('hasSeenSplash', 'true');
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 800); // Wait for transition
             }, 1500); 
             
             document.body.classList.add('page-transition');
@@ -46,14 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('loaded');
     }
 
-    // 2. Sticky Header & Scroll to Top Button
+
+    // 2. Sticky Header
     const header = document.querySelector('.main-head');
     const progressBar = document.getElementById('scroll-progress-bar');
 
     const handleScroll = () => {
+        const scrollY = window.scrollY;
+
         // Sticky Header Logic
         if (header) {
-            if (window.scrollY > 50) {
+            if (scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -268,8 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
         chatbotBubble.addEventListener('click', () => {
             chatbotWindow.classList.toggle('active');
         });
+    }
 
-        const addMessage = (text, sender) => {
+    const addMessage = (text, sender) => {
             const msg = document.createElement('div');
             msg.className = `chat-msg ${sender}`;
             msg.innerText = text;
@@ -384,5 +391,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+
+
 
 });

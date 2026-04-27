@@ -7,6 +7,8 @@ const translations = {
         'nav-donate': 'Donate',
         'nav-gallery': 'Gallery',
         'nav-archive': 'Archive',
+        'nav-contact': 'Contact',
+        'nav-back-home': 'Back to Home',
 
         'hero-title': 'Shaping Tomorrow\'s Leaders',
         'hero-subtitle': 'An Islamic Based Institution Fostering Excellence in Education & Spirituality',
@@ -43,14 +45,16 @@ const translations = {
         'nurani-ustad-bio': 'Leading the administrative and spiritual growth of our institutions with a dedication to student welfare and academic rigour.'
     },
     'ml': {
-        'welcome-msg': 'ജാമിയ മഹ്മൂദിയ്യയിലേക്ക്  സ്വാഗതം',
+        'welcome-msg': 'ജാമിഅ മഹ്മൂദിയ്യയിലേക്ക്  സ്വാഗതം',
         'nav-home': 'ഹോം (Home)',
         'nav-admissions': 'അഡ്മിഷൻ (Admissions)',
         'nav-about': 'ഞങ്ങളെക്കുറിച്ച് (About)',
         'nav-donate': 'സംഭാവന (Donate)',
         'nav-gallery': 'ഗാലറി (Gallery)',
         'nav-archive': 'ആർക്കൈവ്',
-        'archive-title': 'ഡിജിറ്റل ആർക്കൈവ്',
+        'nav-contact': 'ബന്ധപ്പെടുക (Contact)',
+        'nav-back-home': 'ഹോമിലേക്ക് മടങ്ങുക',
+        'archive-title': 'ഡിജിറ്റൽ ആർക്കൈവ്',
         'archive-subtitle': 'ഞങ്ങളുടെ ഏറ്റവും പുതിയ മാഗസിനുകളും റിപ്പോർട്ടുകളും ഇവിടെ കാണാം',
 
         'hero-title': 'നാളെയുടെ നേതാക്കളെ വാർത്തെടുക്കുന്നു',
@@ -93,6 +97,8 @@ const translations = {
         'nav-donate': 'تبرع',
         'nav-gallery': 'معرض الصور',
         'nav-archive': 'الأرشيف',
+        'nav-contact': 'اتصل بنا',
+        'nav-back-home': 'العودة إلى الرئيسية',
         'archive-title': 'الأرشيف الرقمي',
         'archive-subtitle': 'استكشف أحدث المجلات والتقارير لدينا',
 

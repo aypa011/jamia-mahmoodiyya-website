@@ -2239,19 +2239,7 @@ body.dark-theme .inst-img-wrapper {
     animation: pulse-ring 4s infinite ease-in-out;
 }
 
-@keyframes pulse-ring {
 
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.2;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: 0.05;
-    }
-}
 
 .leader-img {
     width: 100%;
@@ -2441,230 +2429,51 @@ body.dark-theme .gallery-search-wrapper input {
     }
 }
 
+
+
+
 /* ==========================================================================
-   Search Overlay
+   Splash Screen
    ========================================================================== */
-.search-overlay {
+#splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(15px);
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-}
-
-.search-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.search-container {
-    width: 100%;
-    max-width: 700px;
-    position: relative;
-}
-
-#global-search {
-    width: 100%;
-    padding: 20px 30px;
-    font-size: 1.5rem;
-    border-radius: 50px;
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    outline: none;
-    box-shadow: var(--shadow-lg);
-}
-
-#search-results {
-    margin-top: 30px;
-    max-height: 60vh;
-    overflow-y: auto;
-    padding-right: 10px;
-}
-
-.search-result-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-}
-
-.search-result-item:hover {
-    background: rgba(16, 185, 129, 0.1);
-    transform: translateX(10px);
-}
-
-.search-result-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.search-result-item h4 {
-    color: white;
-    margin-bottom: 5px;
-}
-
-.search-result-item p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.close-search {
-    position: absolute;
-    top: -60px;
-    right: 0;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* ==========================================================================
-   Campus Map & Virtual Tour
-   ========================================================================== */
-.map-interactive-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 0;
-    overflow: hidden;
-    padding: 0 !important;
-}
-
-.map-hotspots-container {
-    position: relative;
-    height: 500px;
-}
-
-.map-base-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hotspot {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 0 15px var(--primary-color);
-    animation: pulse-ring 2s infinite;
-    z-index: 10;
-    transition: transform 0.3s ease;
-}
-
-.hotspot:hover {
-    transform: scale(1.2);
-    background: var(--accent-color);
-    box-shadow: 0 0 20px var(--accent-color);
-}
-
-.map-info-panel {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.map-info-panel h3 {
-    color: var(--primary-light);
-    margin-bottom: 15px;
-}
-
-.tour-wrapper {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-    cursor: pointer;
-    padding: 0 !important;
-}
-
-.tour-placeholder {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.tour-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.tour-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color: white;
-    transition: background 0.3s ease;
+    align-items: center;
+    z-index: 10005;
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.tour-wrapper:hover .tour-overlay {
-    background: rgba(0, 0, 0, 0.2);
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-.play-btn-circle {
-    width: 80px;
-    height: 80px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+.splash-logo {
+    width: 120px;
+    height: auto;
     margin-bottom: 20px;
-    box-shadow: var(--shadow-lg);
-    transition: transform 0.3s ease;
+    animation: pulse-ring 2s infinite ease-in-out;
 }
 
-.tour-wrapper:hover .play-btn-circle {
-    transform: scale(1.1);
+.splash-loader {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(4, 120, 87, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: loading 1s linear infinite;
 }
 
-@media (max-width: 992px) {
-    .map-interactive-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .map-info-panel {
-        padding: 20px;
-    }
-
-    .map-hotspots-container,
-    .tour-wrapper {
-        height: 300px;
-    }
-
-    .hotspot {
-        width: 24px;
-        height: 24px;
-        font-size: 0.8rem;
-    }
+@keyframes loading {
+    to { transform: rotate(360deg); }
 }
 
 @media (max-width: 480px) {
@@ -2678,13 +2487,14 @@ body.dark-theme .gallery-search-wrapper input {
     }
 }
 
+
 /* ==========================================================================
-   INSTITUTIONAL AI CHATBOT
+   Admission Form Styles
    ========================================================================== */
 .chatbot-container {
     position: fixed !important;
     bottom: 30px !important;
-    right: 30px !important;
+    left: 30px !important;
     z-index: 10002 !important;
     font-family: 'Inter', sans-serif;
 }
@@ -2713,7 +2523,7 @@ body.dark-theme .gallery-search-wrapper input {
 .chatbot-window {
     position: absolute;
     bottom: 80px;
-    right: 0;
+    left: 0;
     width: 350px;
     height: 500px;
     background: white;
@@ -2735,6 +2545,263 @@ body.dark-theme .gallery-search-wrapper input {
     transform: translateY(0) scale(1);
 }
 
+/* ==========================================================================
+   Search Overlay
+   ========================================================================== */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-container {
+    width: 90%;
+    max-width: 800px;
+    color: white;
+    transform: translateY(30px);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.search-overlay.active .search-container {
+    transform: translateY(0);
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.search-header h2 {
+    color: white;
+    font-size: 2.2rem;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.close-search {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-search:hover {
+    transform: rotate(90deg);
+}
+
+.search-input-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.search-input-wrapper i {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--primary-light);
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 30px 20px 70px;
+    border-radius: 100px;
+    font-size: 1.2rem;
+    color: white;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-input-wrapper input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.search-results {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.search-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    margin-top: 50px;
+}
+
+
+.admission-form-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    overflow: hidden;
+}
+
+.admission-info-panel {
+    padding: 50px;
+}
+
+.admission-form-panel {
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.02);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.8);
+    transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.1);
+}
+
+.grid-input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .grid-input-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .admission-info-panel, .admission-form-panel {
+        padding: 30px 20px;
+    }
+}
+
+/* ==========================================================================
+   Notice Board & Marquee Refinements
+   ========================================================================== */
+.notice-board-section {
+    padding: 0;
+    height: 50px;
+    background: var(--bg-surface);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+.notice-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 0;
+}
+
+.notice-header h3 {
+    color: white;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+/* ==========================================================================
+   INSTITUTIONAL AI CHATBOT
+   ========================================================================== */
+.chatbot-container {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    z-index: 10002 !important;
+    font-family: 'Inter', sans-serif;
+    pointer-events: none; /* Let clicks pass through except for the window */
+}
+
+.chatbot-trigger {
+    background: var(--primary-dark) !important;
+    color: white !important;
+    border: none;
+    cursor: pointer;
+}
+
+.chatbot-trigger:hover {
+    background: var(--primary-color) !important;
+}
+
+.chatbot-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+    pointer-events: auto; /* Enable clicks on the window */
+}
+
+.chatbot-window.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
 .chat-header {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
     color: white;
@@ -2742,6 +2809,25 @@ body.dark-theme .gallery-search-wrapper input {
     display: flex;
     align-items: center;
     gap: 12px;
+    position: relative;
+}
+
+.close-chat {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-chat:hover {
+    opacity: 1;
 }
 
 .chat-header img {
@@ -2755,11 +2841,6 @@ body.dark-theme .gallery-search-wrapper input {
     font-size: 1rem;
     margin: 0;
     font-weight: 600;
-}
-
-.chat-header span {
-    font-size: 0.75rem;
-    opacity: 0.8;
 }
 
 .chat-body {
@@ -2802,6 +2883,7 @@ body.dark-theme .gallery-search-wrapper input {
     border-top: 1px solid rgba(0,0,0,0.05);
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 .chat-input {
@@ -2811,43 +2893,27 @@ body.dark-theme .gallery-search-wrapper input {
     border-radius: 25px;
     font-size: 0.9rem;
     outline: none;
-    transition: border-color 0.3s;
-}
-
-.chat-input:focus {
-    border-color: var(--primary-color);
 }
 
 .chat-send {
-    background: var(--primary-color);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--primary-color);
     cursor: pointer;
-    transition: background 0.3s;
-}
-
-.chat-send:hover {
-    background: var(--primary-dark);
+    font-size: 1.2rem;
 }
 
 .quick-replies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     padding: 0 20px 15px 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
     background: #f8fafc;
 }
 
 .quick-btn {
+    padding: 6px 12px;
     background: white;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 6px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
     cursor: pointer;
@@ -2859,18 +2925,14 @@ body.dark-theme .gallery-search-wrapper input {
     color: white;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @media (max-width: 480px) {
     .chatbot-window {
         width: calc(100vw - 40px);
-        height: 80vh;
-        right: -10px;
+        height: 70vh;
+        left: -10px;
     }
 }
+
 
 
 
